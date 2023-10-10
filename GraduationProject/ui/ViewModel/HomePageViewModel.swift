@@ -6,7 +6,18 @@
 //
 
 import Foundation
+import RxSwift
 
 class HomePageViewModel {
     
+    var fRepo = FoodDaoRepository()
+    var foodList = BehaviorSubject<[Foods]>(value: [Foods]())
+    
+    init(){
+        foodList = fRepo.foodList
+    }
+    
+    func getFoods(){
+        fRepo.getFoods()
+    }
 }
