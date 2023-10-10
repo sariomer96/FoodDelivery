@@ -15,6 +15,13 @@
 		172AC2AC2AD52E4800713D36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 172AC2AA2AD52E4800713D36 /* LaunchScreen.storyboard */; };
 		172AC2B42AD5329700713D36 /* FoodDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172AC2B32AD5329700713D36 /* FoodDetail.swift */; };
 		172AC2B62AD5392300713D36 /* AddToCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172AC2B52AD5392300713D36 /* AddToCart.swift */; };
+		172AC2B92AD539E000713D36 /* HomePageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172AC2B82AD539E000713D36 /* HomePageViewModel.swift */; };
+		172AC2BB2AD53A0100713D36 /* AddToCartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172AC2BA2AD53A0100713D36 /* AddToCartViewModel.swift */; };
+		172AC2BD2AD53A1100713D36 /* FoodDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172AC2BC2AD53A1100713D36 /* FoodDetailViewModel.swift */; };
+		172AC2C52AD53BC100713D36 /* FoodDaoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172AC2C42AD53BC100713D36 /* FoodDaoRepository.swift */; };
+		172AC2C72AD53CEE00713D36 /* Foods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172AC2C62AD53CEE00713D36 /* Foods.swift */; };
+		172AC2C92AD53E3B00713D36 /* FoodResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172AC2C82AD53E3B00713D36 /* FoodResponse.swift */; };
+		172AC2CB2AD53F3E00713D36 /* CRUDResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172AC2CA2AD53F3E00713D36 /* CRUDResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +35,13 @@
 		172AC2AD2AD52E4800713D36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		172AC2B32AD5329700713D36 /* FoodDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetail.swift; sourceTree = "<group>"; };
 		172AC2B52AD5392300713D36 /* AddToCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCart.swift; sourceTree = "<group>"; };
+		172AC2B82AD539E000713D36 /* HomePageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewModel.swift; sourceTree = "<group>"; };
+		172AC2BA2AD53A0100713D36 /* AddToCartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToCartViewModel.swift; sourceTree = "<group>"; };
+		172AC2BC2AD53A1100713D36 /* FoodDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDetailViewModel.swift; sourceTree = "<group>"; };
+		172AC2C42AD53BC100713D36 /* FoodDaoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodDaoRepository.swift; sourceTree = "<group>"; };
+		172AC2C62AD53CEE00713D36 /* Foods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foods.swift; sourceTree = "<group>"; };
+		172AC2C82AD53E3B00713D36 /* FoodResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodResponse.swift; sourceTree = "<group>"; };
+		172AC2CA2AD53F3E00713D36 /* CRUDResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRUDResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,17 +74,80 @@
 		172AC29E2AD52E4300713D36 /* GraduationProject */ = {
 			isa = PBXGroup;
 			children = (
+				172AC2C12AD53B7000713D36 /* data */,
+				172AC2BE2AD53B0700713D36 /* ui */,
 				172AC29F2AD52E4300713D36 /* AppDelegate.swift */,
-				172AC2B52AD5392300713D36 /* AddToCart.swift */,
 				172AC2A12AD52E4300713D36 /* SceneDelegate.swift */,
-				172AC2A32AD52E4300713D36 /* HomePage.swift */,
-				172AC2B32AD5329700713D36 /* FoodDetail.swift */,
 				172AC2A52AD52E4300713D36 /* Main.storyboard */,
 				172AC2A82AD52E4800713D36 /* Assets.xcassets */,
 				172AC2AA2AD52E4800713D36 /* LaunchScreen.storyboard */,
 				172AC2AD2AD52E4800713D36 /* Info.plist */,
 			);
 			path = GraduationProject;
+			sourceTree = "<group>";
+		};
+		172AC2B72AD539C000713D36 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				172AC2B82AD539E000713D36 /* HomePageViewModel.swift */,
+				172AC2BC2AD53A1100713D36 /* FoodDetailViewModel.swift */,
+				172AC2BA2AD53A0100713D36 /* AddToCartViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		172AC2BE2AD53B0700713D36 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				172AC2C02AD53B4200713D36 /* views */,
+				172AC2BF2AD53B3600713D36 /* tableView */,
+				172AC2B72AD539C000713D36 /* ViewModel */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		172AC2BF2AD53B3600713D36 /* tableView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = tableView;
+			sourceTree = "<group>";
+		};
+		172AC2C02AD53B4200713D36 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				172AC2B52AD5392300713D36 /* AddToCart.swift */,
+				172AC2A32AD52E4300713D36 /* HomePage.swift */,
+				172AC2B32AD5329700713D36 /* FoodDetail.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		172AC2C12AD53B7000713D36 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				172AC2C32AD53B8700713D36 /* entity */,
+				172AC2C22AD53B7F00713D36 /* repo */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		172AC2C22AD53B7F00713D36 /* repo */ = {
+			isa = PBXGroup;
+			children = (
+				172AC2C42AD53BC100713D36 /* FoodDaoRepository.swift */,
+			);
+			path = repo;
+			sourceTree = "<group>";
+		};
+		172AC2C32AD53B8700713D36 /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				172AC2C62AD53CEE00713D36 /* Foods.swift */,
+				172AC2CA2AD53F3E00713D36 /* CRUDResponse.swift */,
+				172AC2C82AD53E3B00713D36 /* FoodResponse.swift */,
+			);
+			path = entity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,9 +221,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				172AC2BB2AD53A0100713D36 /* AddToCartViewModel.swift in Sources */,
 				172AC2A42AD52E4300713D36 /* HomePage.swift in Sources */,
+				172AC2CB2AD53F3E00713D36 /* CRUDResponse.swift in Sources */,
 				172AC2A02AD52E4300713D36 /* AppDelegate.swift in Sources */,
+				172AC2BD2AD53A1100713D36 /* FoodDetailViewModel.swift in Sources */,
+				172AC2B92AD539E000713D36 /* HomePageViewModel.swift in Sources */,
+				172AC2C72AD53CEE00713D36 /* Foods.swift in Sources */,
 				172AC2B42AD5329700713D36 /* FoodDetail.swift in Sources */,
+				172AC2C52AD53BC100713D36 /* FoodDaoRepository.swift in Sources */,
+				172AC2C92AD53E3B00713D36 /* FoodResponse.swift in Sources */,
 				172AC2B62AD5392300713D36 /* AddToCart.swift in Sources */,
 				172AC2A22AD52E4300713D36 /* SceneDelegate.swift in Sources */,
 			);
