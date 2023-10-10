@@ -22,6 +22,9 @@
 		172AC2C72AD53CEE00713D36 /* Foods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172AC2C62AD53CEE00713D36 /* Foods.swift */; };
 		172AC2C92AD53E3B00713D36 /* FoodResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172AC2C82AD53E3B00713D36 /* FoodResponse.swift */; };
 		172AC2CB2AD53F3E00713D36 /* CRUDResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172AC2CA2AD53F3E00713D36 /* CRUDResponse.swift */; };
+		172AC2CD2AD54ED000713D36 /* BasketFoods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172AC2CC2AD54ED000713D36 /* BasketFoods.swift */; };
+		172AC2D02AD54FDC00713D36 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 172AC2CF2AD54FDC00713D36 /* Alamofire */; };
+		172AC2D32AD54FF900713D36 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 172AC2D22AD54FF900713D36 /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +45,7 @@
 		172AC2C62AD53CEE00713D36 /* Foods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foods.swift; sourceTree = "<group>"; };
 		172AC2C82AD53E3B00713D36 /* FoodResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodResponse.swift; sourceTree = "<group>"; };
 		172AC2CA2AD53F3E00713D36 /* CRUDResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRUDResponse.swift; sourceTree = "<group>"; };
+		172AC2CC2AD54ED000713D36 /* BasketFoods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketFoods.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +53,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				172AC2D32AD54FF900713D36 /* RxSwift in Frameworks */,
+				172AC2D02AD54FDC00713D36 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,17 +106,17 @@
 			isa = PBXGroup;
 			children = (
 				172AC2C02AD53B4200713D36 /* views */,
-				172AC2BF2AD53B3600713D36 /* tableView */,
+				172AC2BF2AD53B3600713D36 /* collectionView */,
 				172AC2B72AD539C000713D36 /* ViewModel */,
 			);
 			path = ui;
 			sourceTree = "<group>";
 		};
-		172AC2BF2AD53B3600713D36 /* tableView */ = {
+		172AC2BF2AD53B3600713D36 /* collectionView */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = tableView;
+			path = collectionView;
 			sourceTree = "<group>";
 		};
 		172AC2C02AD53B4200713D36 /* views */ = {
@@ -144,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				172AC2C62AD53CEE00713D36 /* Foods.swift */,
+				172AC2CC2AD54ED000713D36 /* BasketFoods.swift */,
 				172AC2CA2AD53F3E00713D36 /* CRUDResponse.swift */,
 				172AC2C82AD53E3B00713D36 /* FoodResponse.swift */,
 			);
@@ -166,6 +173,10 @@
 			dependencies = (
 			);
 			name = GraduationProject;
+			packageProductDependencies = (
+				172AC2CF2AD54FDC00713D36 /* Alamofire */,
+				172AC2D22AD54FF900713D36 /* RxSwift */,
+			);
 			productName = GraduationProject;
 			productReference = 172AC29C2AD52E4300713D36 /* GraduationProject.app */;
 			productType = "com.apple.product-type.application";
@@ -194,6 +205,10 @@
 				Base,
 			);
 			mainGroup = 172AC2932AD52E4300713D36;
+			packageReferences = (
+				172AC2CE2AD54FDC00713D36 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				172AC2D12AD54FF900713D36 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 172AC29D2AD52E4300713D36 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -225,6 +240,7 @@
 				172AC2A42AD52E4300713D36 /* HomePage.swift in Sources */,
 				172AC2CB2AD53F3E00713D36 /* CRUDResponse.swift in Sources */,
 				172AC2A02AD52E4300713D36 /* AppDelegate.swift in Sources */,
+				172AC2CD2AD54ED000713D36 /* BasketFoods.swift in Sources */,
 				172AC2BD2AD53A1100713D36 /* FoodDetailViewModel.swift in Sources */,
 				172AC2B92AD539E000713D36 /* HomePageViewModel.swift in Sources */,
 				172AC2C72AD53CEE00713D36 /* Foods.swift in Sources */,
@@ -452,6 +468,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		172AC2CE2AD54FDC00713D36 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		172AC2D12AD54FF900713D36 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		172AC2CF2AD54FDC00713D36 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 172AC2CE2AD54FDC00713D36 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		172AC2D22AD54FF900713D36 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 172AC2D12AD54FF900713D36 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 172AC2942AD52E4300713D36 /* Project object */;
 }
