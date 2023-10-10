@@ -20,9 +20,7 @@ class HomePage: UIViewController {
       
             DispatchQueue.main.async {
    
-                for i in self.foodList {
-                    print(i.yemek_adi)
-                }
+             
               
               //  self.kisilerTableView.reloadData()
             }

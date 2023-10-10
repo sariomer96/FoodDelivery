@@ -8,7 +8,7 @@
 import Foundation
 
 class BasketFoods : Codable {
-    var sepet_yemek_id : Int?
+    var sepet_yemek_id : String?
     var yemek_adi : String?
     var yemek_resim_adi : String?
     var yemek_fiyat : String?

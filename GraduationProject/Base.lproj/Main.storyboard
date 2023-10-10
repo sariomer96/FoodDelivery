@@ -33,8 +33,32 @@
                     <view key="view" contentMode="scaleToFill" id="XOH-Ox-kuG">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWl-CB-OB3">
+                                <rect key="frame" x="150" y="430.5" width="114" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Sepete Ekle"/>
+                                <connections>
+                                    <action selector="addToCart:" destination="f06-4V-hyl" eventType="touchUpInside" id="RLg-4j-57M"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7CI-Mj-a8T">
+                                <rect key="frame" x="150" y="481.5" width="148.5" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Sepettekini getir"/>
+                                <connections>
+                                    <action selector="getBasket:" destination="f06-4V-hyl" eventType="touchUpInside" id="ZgG-05-TWQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="MCf-sY-uyw"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7CI-Mj-a8T" firstAttribute="top" secondItem="LWl-CB-OB3" secondAttribute="bottom" constant="16" id="WKj-L4-fDg"/>
+                            <constraint firstItem="LWl-CB-OB3" firstAttribute="centerY" secondItem="XOH-Ox-kuG" secondAttribute="centerY" id="eiI-dx-lR6"/>
+                            <constraint firstItem="7CI-Mj-a8T" firstAttribute="leading" secondItem="LWl-CB-OB3" secondAttribute="leading" id="ftz-i0-Aei"/>
+                            <constraint firstItem="LWl-CB-OB3" firstAttribute="centerX" secondItem="XOH-Ox-kuG" secondAttribute="centerX" id="rWA-Ge-IWU"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Food Detail" id="lMv-in-gia"/>
                 </viewController>
@@ -45,7 +69,7 @@
         <!--Add To Cart-->
         <scene sceneID="KqT-mw-r15">
             <objects>
-                <viewController id="BDm-JL-2j7" customClass="AddToCart" customModule="GraduationProject" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BDm-JL-2j7" customClass="MyBasket" customModule="GraduationProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="t70-hA-9Lv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

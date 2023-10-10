@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddToCart: UIViewController {
+class MyBasket: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

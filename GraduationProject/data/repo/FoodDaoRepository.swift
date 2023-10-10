@@ -108,9 +108,7 @@ class FoodDaoRepository {
                     let cevap = try JSONDecoder().decode(FoodResponse.self, from: data)
                     if let liste = cevap.yemekler {
                         
-                        for i in liste {
-                            print(i.yemek_adi!)
-                        }
+                       
                       //  self.foodList.onNext(liste)
                     }
                 }catch{
@@ -124,10 +122,47 @@ class FoodDaoRepository {
     func getBasketFoods(){
         
     }
-    
-    func addToCartFood(){
+    func addToCartFood(yemek_adi:String,yemek_resim_adi:String,yemek_fiyat:Int,yemek_siparis_adet:Int,
+                   kullanici_adi:String){
         
+        let params:Parameters = ["yemek_adi" : yemek_adi,"yemek_resim_adi" : yemek_resim_adi,"yemek_fiyat" : yemek_fiyat,"yemek_siparis_adet" : yemek_siparis_adet,"kullanici_adi" : kullanici_adi]
+                AF.request("http://kasimadalan.pe.hu/yemekler/sepeteYemekEkle.php",method: .post,parameters: params).response {
+                    response in
+        
+                    if let data = response.data {
+                        do{
+                            let cevap = try JSONDecoder().decode(CRUDResponse.self, from: data)
+                            print(cevap.message!)
+                            
+                        }catch{
+                            print(error.localizedDescription)
+                        }
+                    }
+                }
     }
+    func getCartFood() {
+        
+        let params:Parameters = ["kullanici_adi" : "s_omer_sari"]
+                AF.request("http://kasimadalan.pe.hu/yemekler/sepettekiYemekleriGetir.php",method: .post,parameters: params).response {
+                    response in
+                     
+                    if let data = response.data {
+                        do{
+                            var cevap = try JSONDecoder().decode(BasketResponse.self, from: data)
+                               //success
+                            if let y = cevap.sepet_yemekler {
+                                for i in y {
+                                    print("\(i.yemek_adi!) \(i.yemek_siparis_adet!) \(i.yemek_resim_adi!)")
+                                }
+                            }
+                        }catch{
+                             print(error.localizedDescription)
+                            print("error")
+                        }
+                    }
+                }
+    }
+    
     func deleteFoodOnBasket(){
         
     }
