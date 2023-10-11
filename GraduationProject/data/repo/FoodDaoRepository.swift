@@ -165,9 +165,7 @@ class FoodDaoRepository {
                         do{
                             var cevap = try JSONDecoder().decode(CRUDResponse.self, from: data)
                                //success
-                            
-                            print(cevap.message)
-                            print(cevap.success)
+                      
                         }catch{
                              print(error.localizedDescription)
                             print("error")

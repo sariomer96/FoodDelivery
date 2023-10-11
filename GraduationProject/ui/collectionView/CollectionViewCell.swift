@@ -8,5 +8,10 @@
 import UIKit
 
 class CollectionViewCell: UICollectionViewCell {
+
+    @IBOutlet weak var labelFiyat: UILabel!
     
+    @IBOutlet weak var labelUrunAdi: UILabel!
+    
+    @IBOutlet weak var imageView: UIImageView!
 }
