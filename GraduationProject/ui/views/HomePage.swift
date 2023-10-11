@@ -10,7 +10,7 @@ import UIKit
 class HomePage: UIViewController {
 
     var foodList = [Foods]()
-    
+    var imageArray = [String]()
     var viewModel = HomePageViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +21,13 @@ class HomePage: UIViewController {
             DispatchQueue.main.async {
    
              
-              
+                for i in self.foodList {
+                    self.imageArray.append(i.yemek_resim_adi!)
+                }
+                
+                for i in self.imageArray {
+                    print(i)
+                }
               //  self.kisilerTableView.reloadData()
             }
         })

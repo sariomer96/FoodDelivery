@@ -109,7 +109,7 @@ class FoodDaoRepository {
                     if let liste = cevap.yemekler {
                         
                        
-                      //  self.foodList.onNext(liste)
+                       self.foodList.onNext(liste)
                     }
                 }catch{
                     print(error.localizedDescription)
@@ -147,11 +147,7 @@ class FoodDaoRepository {
                         do{
                             var cevap = try JSONDecoder().decode(BasketResponse.self, from: data)
                                //success
-                            if let y = cevap.sepet_yemekler {
-                                for i in y {
-                                    print("\(i.yemek_adi!) \(i.sepet_yemek_id!) \(i.kullanici_adi!) \(i.yemek_siparis_adet) ")
-                                }
-                            }
+                          
                         }catch{
                              print(error.localizedDescription)
                             print("error")

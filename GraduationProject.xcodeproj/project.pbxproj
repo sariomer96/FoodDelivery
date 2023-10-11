@@ -26,6 +26,7 @@
 		172AC2D02AD54FDC00713D36 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 172AC2CF2AD54FDC00713D36 /* Alamofire */; };
 		172AC2D32AD54FF900713D36 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 172AC2D22AD54FF900713D36 /* RxSwift */; };
 		172AC2D52AD5D9D000713D36 /* BasketResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172AC2D42AD5D9D000713D36 /* BasketResponse.swift */; };
+		172AC2D72AD6BF5000713D36 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172AC2D62AD6BF5000713D36 /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		172AC2CA2AD53F3E00713D36 /* CRUDResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CRUDResponse.swift; sourceTree = "<group>"; };
 		172AC2CC2AD54ED000713D36 /* BasketFoods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketFoods.swift; sourceTree = "<group>"; };
 		172AC2D42AD5D9D000713D36 /* BasketResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketResponse.swift; sourceTree = "<group>"; };
+		172AC2D62AD6BF5000713D36 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 		172AC2BF2AD53B3600713D36 /* collectionView */ = {
 			isa = PBXGroup;
 			children = (
+				172AC2D62AD6BF5000713D36 /* CollectionViewCell.swift */,
 			);
 			path = collectionView;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				172AC2A42AD52E4300713D36 /* HomePage.swift in Sources */,
 				172AC2CB2AD53F3E00713D36 /* CRUDResponse.swift in Sources */,
 				172AC2A02AD52E4300713D36 /* AppDelegate.swift in Sources */,
+				172AC2D72AD6BF5000713D36 /* CollectionViewCell.swift in Sources */,
 				172AC2CD2AD54ED000713D36 /* BasketFoods.swift in Sources */,
 				172AC2BD2AD53A1100713D36 /* FoodDetailViewModel.swift in Sources */,
 				172AC2B92AD539E000713D36 /* HomePageViewModel.swift in Sources */,

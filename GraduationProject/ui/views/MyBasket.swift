@@ -30,10 +30,7 @@ class MyBasket: UIViewController {
 
     @IBAction func deleteBasket(_ sender: Any) {
         viewModel.deleteFoodOnBasket(sepet_yemek_id: 103055, kullanici_adi: "s_omer_sari")
-        viewModel.deleteFoodOnBasket(sepet_yemek_id: 103076, kullanici_adi: "s_omer_sari")
-        viewModel.deleteFoodOnBasket(sepet_yemek_id: 103077, kullanici_adi: "s_omer_sari")
-        viewModel.deleteFoodOnBasket(sepet_yemek_id: 103081, kullanici_adi: "s_omer_sari")
-        viewModel.deleteFoodOnBasket(sepet_yemek_id: 103082, kullanici_adi: "s_omer_sari")
+        
     }
     
 }
