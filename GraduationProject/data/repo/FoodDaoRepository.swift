@@ -99,7 +99,7 @@ class FoodDaoRepository {
 //    }
     
     var foodList = BehaviorSubject<[Foods]>(value: [Foods]())
-    
+    var basketList = BehaviorSubject<[BasketFoods]>(value: [BasketFoods]())
     
     func getFoods () {
         AF.request("http://kasimadalan.pe.hu/yemekler/tumYemekleriGetir.php",method: .get).response { response in
@@ -118,21 +118,18 @@ class FoodDaoRepository {
             
         }
     }
-    
-    func getBasketFoods(){
-        
-    }
+   
     func addToCartFood(yemek_adi:String,yemek_resim_adi:String,yemek_fiyat:Int,yemek_siparis_adet:Int,
                    kullanici_adi:String){
         
-        let params:Parameters = ["yemek_adi" : yemek_adi,"yemek_resim_adi" : yemek_resim_adi,"yemek_fiyat" : yemek_fiyat,"yemek_siparis_adet" : yemek_siparis_adet,"kullanici_adi" : kullanici_adi]
+        let params:Parameters = ["yemek_adi":yemek_adi,"yemek_resim_adi":yemek_resim_adi,"yemek_fiyat":yemek_fiyat,"yemek_siparis_adet":yemek_siparis_adet,"kullanici_adi":kullanici_adi]
                 AF.request("http://kasimadalan.pe.hu/yemekler/sepeteYemekEkle.php",method: .post,parameters: params).response {
                     response in
         
                     if let data = response.data {
                         do{
                             let cevap = try JSONDecoder().decode(CRUDResponse.self, from: data)
-                            print(cevap.message!)
+                          
                             
                         }catch{
                             print(error.localizedDescription)
@@ -140,9 +137,9 @@ class FoodDaoRepository {
                     }
                 }
     }
-    func getCartFood() {
+    func getCartFood(kullanici_adi:String) {
         
-        let params:Parameters = ["kullanici_adi" : "s_omer_sari"]
+        let params:Parameters = ["kullanici_adi":kullanici_adi]
                 AF.request("http://kasimadalan.pe.hu/yemekler/sepettekiYemekleriGetir.php",method: .post,parameters: params).response {
                     response in
                      
@@ -152,7 +149,7 @@ class FoodDaoRepository {
                                //success
                             if let y = cevap.sepet_yemekler {
                                 for i in y {
-                                    print("\(i.yemek_adi!) \(i.yemek_siparis_adet!) \(i.yemek_resim_adi!)")
+                                    print("\(i.yemek_adi!) \(i.sepet_yemek_id!) \(i.kullanici_adi!) \(i.yemek_siparis_adet) ")
                                 }
                             }
                         }catch{
@@ -163,8 +160,24 @@ class FoodDaoRepository {
                 }
     }
     
-    func deleteFoodOnBasket(){
-        
+    func deleteFoodOnBasket(sepet_yemek_id : Int,kullanici_adi:String){
+        let params:Parameters = ["sepet_yemek_id":sepet_yemek_id,"kullanici_adi":kullanici_adi]
+                AF.request("http://kasimadalan.pe.hu/yemekler/sepettenYemekSil.php",method: .post,parameters: params).response {
+                    response in
+                     
+                    if let data = response.data {
+                        do{
+                            var cevap = try JSONDecoder().decode(CRUDResponse.self, from: data)
+                               //success
+                            
+                            print(cevap.message)
+                            print(cevap.success)
+                        }catch{
+                             print(error.localizedDescription)
+                            print("error")
+                        }
+                    }
+                }
     }
     func getFoodImages(){
         

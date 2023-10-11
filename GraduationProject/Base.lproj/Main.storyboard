@@ -73,8 +73,22 @@
                     <view key="view" contentMode="scaleToFill" id="t70-hA-9Lv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pg-Z6-unU">
+                                <rect key="frame" x="159.5" y="430.5" width="95" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Sepeti Sil"/>
+                                <connections>
+                                    <action selector="deleteBasket:" destination="BDm-JL-2j7" eventType="touchUpInside" id="lm6-ab-ouB"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="2Az-FH-t0M"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3pg-Z6-unU" firstAttribute="centerY" secondItem="t70-hA-9Lv" secondAttribute="centerY" id="OyS-aa-FZI"/>
+                            <constraint firstItem="3pg-Z6-unU" firstAttribute="centerX" secondItem="t70-hA-9Lv" secondAttribute="centerX" id="RhQ-qn-KGu"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Add To Cart" id="yFS-ZW-tZN"/>
                 </viewController>
