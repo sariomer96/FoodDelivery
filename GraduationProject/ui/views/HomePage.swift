@@ -13,6 +13,8 @@ class HomePage: UIViewController {
     @IBOutlet weak var foodCollectionView: UICollectionView!
     var foodList = [Foods]()
     var imageList = [String]()
+    var foodNameList = [String]()
+    var foodPriceList = [String]()
     var viewModel = HomePageViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +29,8 @@ class HomePage: UIViewController {
              
                 for i in self.foodList {
                     self.imageList.append(i.yemek_resim_adi!)
+                    self.foodNameList.append(i.yemek_adi!)
+                    self.foodPriceList.append(i.yemek_fiyat!)
                 }
                 
                
@@ -39,7 +43,14 @@ class HomePage: UIViewController {
         viewModel.getFoods()
     }
  
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toDetail" {
+            if let food = sender as? Foods {
+                let targetVC = segue.destination as! FoodDetail
+                targetVC.food = food
+            }
+        }
+    }
 }
 
 extension HomePage : UICollectionViewDelegate, UICollectionViewDataSource {
@@ -48,12 +59,20 @@ extension HomePage : UICollectionViewDelegate, UICollectionViewDataSource {
         return imageList.count
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let food = foodList[indexPath.row]
+        performSegue(withIdentifier: "toDetail", sender: food)
+        collectionView.deselectItem(at: indexPath, animated: true)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
         
-        print(cell.imageView)
-
+     
+        cell.labelUrunAdi.text = foodNameList[indexPath.row]
+        cell.labelFiyat.text = foodPriceList[indexPath.row]
+        
         cell.imageView.sd_setImage(with: URL(string: "http://kasimadalan.pe.hu/yemekler/resimler/\(imageList[indexPath.row])"), placeholderImage: UIImage(named: imageList[indexPath.row]))
         return cell
         
