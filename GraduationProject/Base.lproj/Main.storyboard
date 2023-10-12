@@ -187,6 +187,8 @@
                     <tabBarItem key="tabBarItem" title="Food Detail" id="lMv-in-gia"/>
                     <navigationItem key="navigationItem" id="Knb-Iw-ATe"/>
                     <connections>
+                        <outlet property="foodName" destination="OK0-Dj-BA5" id="NfL-kR-ZLq"/>
+                        <outlet property="foodPriceLabel" destination="600-zU-ykw" id="ae6-XP-tvV"/>
                         <outlet property="imageView" destination="BMz-DZ-fu6" id="Z1B-2k-bm4"/>
                         <segue destination="BYZ-38-t0r" kind="presentation" identifier="toHome" modalPresentationStyle="fullScreen" id="4eA-WL-4gx"/>
                     </connections>

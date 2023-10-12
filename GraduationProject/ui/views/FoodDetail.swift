@@ -10,24 +10,39 @@ import SDWebImage
 
 class FoodDetail: UIViewController {
 
-    @IBOutlet weak var foodNameLabel: UILabel!
+ 
+    @IBOutlet weak var foodName: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     var food : Foods?
     var viewModel = FoodDetailViewModel()
     
+    @IBOutlet weak var foodPriceLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(food?.yemek_resim_adi)
+ 
         if let f = food {
-            
-            print(f.yemek_resim_adi)
-            
-            imageView.sd_setImage(with: URL(string: "http://kasimadalan.pe.hu/yemekler/resimler/\(f.yemek_resim_adi!)"), placeholderImage: UIImage(named: f.yemek_resim_adi!))
-            
-          
+           // print(f.yemek_adi!)
+            setFoodImage(food: f)
+            setFoodProperties(f: f)
         }
+            
         
+        
+    }
+    func setFoodImage(food:Foods){
+        
+    
+        
+            imageView.sd_setImage(with: URL(string: "http://kasimadalan.pe.hu/yemekler/resimler/\(food.yemek_resim_adi!)"), placeholderImage: UIImage(named: food.yemek_resim_adi!))
+        
+       
+    }
+    func setFoodProperties (f:Foods) {
+        let yemek = f.yemek_adi
+        print(yemek)
+        foodName.text = yemek
+        foodPriceLabel.text = f.yemek_fiyat
     }
     
     @IBAction func backToHome(_ sender: Any) {
