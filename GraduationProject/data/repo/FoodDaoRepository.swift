@@ -147,7 +147,11 @@ class FoodDaoRepository {
                         do{
                             var cevap = try JSONDecoder().decode(BasketResponse.self, from: data)
                                //success
-                          
+                            if let list = cevap.sepet_yemekler {
+                                self.basketList.onNext(list)
+                                
+                            }
+ 
                         }catch{
                              print(error.localizedDescription)
                             print("error")

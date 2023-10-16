@@ -17,12 +17,14 @@ class FoodDetail: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     var food : Foods?
     var viewModel = FoodDetailViewModel()
-    
+    var foodCount = 1
+    var foodPrice = 0
     
     @IBAction func stepperClicked(_ sender: UIStepper) {
         foodCountLabel.text = String(Int(sender.value))
-        
+        foodCount = Int(sender.value)
         let totalPrice = Int(sender.value) * Int((food?.yemek_fiyat)!)!
+        foodPrice = totalPrice
        foodPriceLabel.text = String(totalPrice)
         
     }
@@ -33,6 +35,7 @@ class FoodDetail: UIViewController {
  
         if let f = food {
           
+            foodPrice = Int(f.yemek_fiyat!)!
             setFoodImage(food: f)
             setFoodProperties(f: f)
         }
@@ -47,7 +50,7 @@ class FoodDetail: UIViewController {
     }
     func setFoodProperties (f:Foods) {
         let yemek = f.yemek_adi
-        print(yemek)
+      
         foodName.text = yemek
         foodPriceLabel.text = f.yemek_fiyat
     }
@@ -60,13 +63,17 @@ class FoodDetail: UIViewController {
     @IBAction func addToCart(_ sender: Any) {
 
         
-        viewModel.addToCart(yemek_adi: "Fanta", yemek_resim_adi: "fanta.png", yemek_fiyat: 6, yemek_siparis_adet:10, kullanici_adi: "s_omer_sari")
+        if let food = food {
+            viewModel.addToCart(yemek_adi: food.yemek_adi!, yemek_resim_adi: food.yemek_resim_adi!, yemek_fiyat: foodPrice, yemek_siparis_adet: foodCount, kullanici_adi: "s_omer_sari")
+        }
+     
+       
     }
     
     
 
     @IBAction func getBasket(_ sender: Any) {
-        viewModel.getCart(kullanici_adi: "s_omer_sari")
+         performSegue(withIdentifier: "toChart", sender: nil)
     }
     
 

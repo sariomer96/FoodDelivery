@@ -28,6 +28,7 @@
 		172AC2D52AD5D9D000713D36 /* BasketResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172AC2D42AD5D9D000713D36 /* BasketResponse.swift */; };
 		172AC2D72AD6BF5000713D36 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172AC2D62AD6BF5000713D36 /* CollectionViewCell.swift */; };
 		172AC2DA2AD6D09500713D36 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 172AC2D92AD6D09500713D36 /* SDWebImage */; };
+		172AC2DE2ADD6E5600713D36 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172AC2DD2ADD6E5600713D36 /* CartTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		172AC2CC2AD54ED000713D36 /* BasketFoods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketFoods.swift; sourceTree = "<group>"; };
 		172AC2D42AD5D9D000713D36 /* BasketResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketResponse.swift; sourceTree = "<group>"; };
 		172AC2D62AD6BF5000713D36 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		172AC2DD2ADD6E5600713D36 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				172AC2BE2AD53B0700713D36 /* ui */,
 				172AC29F2AD52E4300713D36 /* AppDelegate.swift */,
 				172AC2A12AD52E4300713D36 /* SceneDelegate.swift */,
+				172AC2DD2ADD6E5600713D36 /* CartTableViewCell.swift */,
 				172AC2A52AD52E4300713D36 /* Main.storyboard */,
 				172AC2A82AD52E4800713D36 /* Assets.xcassets */,
 				172AC2AA2AD52E4800713D36 /* LaunchScreen.storyboard */,
@@ -253,6 +256,7 @@
 				172AC2A02AD52E4300713D36 /* AppDelegate.swift in Sources */,
 				172AC2D72AD6BF5000713D36 /* CollectionViewCell.swift in Sources */,
 				172AC2CD2AD54ED000713D36 /* BasketFoods.swift in Sources */,
+				172AC2DE2ADD6E5600713D36 /* CartTableViewCell.swift in Sources */,
 				172AC2BD2AD53A1100713D36 /* FoodDetailViewModel.swift in Sources */,
 				172AC2B92AD539E000713D36 /* HomePageViewModel.swift in Sources */,
 				172AC2C72AD53CEE00713D36 /* Foods.swift in Sources */,
