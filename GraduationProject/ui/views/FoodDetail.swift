@@ -10,19 +10,24 @@ import SDWebImage
 
 class FoodDetail: UIViewController {
 
- 
+    
+    @IBOutlet weak var foodCountLabel: UILabel!
+    
     @IBOutlet weak var foodName: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     var food : Foods?
     var viewModel = FoodDetailViewModel()
     
+    @IBAction func stepperClicked(_ sender: UIStepper) {
+        foodCountLabel.text = String(Int(sender.value))
+    }
     @IBOutlet weak var foodPriceLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
  
         if let f = food {
-           // print(f.yemek_adi!)
+          
             setFoodImage(food: f)
             setFoodProperties(f: f)
         }
@@ -31,12 +36,9 @@ class FoodDetail: UIViewController {
         
     }
     func setFoodImage(food:Foods){
-        
+
+        imageView.sd_setImage(with: URL(string: "http://kasimadalan.pe.hu/yemekler/resimler/\(food.yemek_resim_adi!)"), placeholderImage: UIImage(named: food.yemek_resim_adi!))
     
-        
-            imageView.sd_setImage(with: URL(string: "http://kasimadalan.pe.hu/yemekler/resimler/\(food.yemek_resim_adi!)"), placeholderImage: UIImage(named: food.yemek_resim_adi!))
-        
-       
     }
     func setFoodProperties (f:Foods) {
         let yemek = f.yemek_adi

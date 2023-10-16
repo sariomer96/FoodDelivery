@@ -130,13 +130,14 @@
                                     <action selector="getBasket:" destination="f06-4V-hyl" eventType="touchUpInside" id="ZgG-05-TWQ"/>
                                 </connections>
                             </button>
-                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="kA0-Oj-Dej">
-                                <rect key="frame" x="150" y="336" width="94" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="kA0-Oj-Dej">
+                                <rect key="frame" x="160" y="336" width="94" height="32"/>
+                                <connections>
+                                    <action selector="stepperClicked:" destination="f06-4V-hyl" eventType="valueChanged" id="oR8-M9-rSU"/>
+                                </connections>
                             </stepper>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aU4-5e-YBh">
-                                <rect key="frame" x="190" y="382" width="12" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aU4-5e-YBh">
+                                <rect key="frame" x="201.5" y="382" width="11.5" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -147,9 +148,8 @@
                                     <constraint firstAttribute="height" constant="156" id="793-BY-igM"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Yemek_Adi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OK0-Dj-BA5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Yemek_Adi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OK0-Dj-BA5">
                                 <rect key="frame" x="149" y="279" width="117" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -162,9 +162,8 @@
                                     <action selector="backToHome:" destination="f06-4V-hyl" eventType="touchUpInside" id="r7p-Ze-8ot"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100 TL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="600-zU-ykw">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 TL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="600-zU-ykw">
                                 <rect key="frame" x="265" y="336" width="52" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -177,16 +176,25 @@
                             <constraint firstItem="MCf-sY-uyw" firstAttribute="trailing" secondItem="BMz-DZ-fu6" secondAttribute="trailing" constant="97" id="Aur-aX-nBv"/>
                             <constraint firstItem="BMz-DZ-fu6" firstAttribute="top" secondItem="MCf-sY-uyw" secondAttribute="top" constant="67" id="ICp-H1-Hjg"/>
                             <constraint firstItem="BMz-DZ-fu6" firstAttribute="leading" secondItem="MCf-sY-uyw" secondAttribute="leading" constant="77" id="LR6-3a-ewi"/>
+                            <constraint firstItem="aU4-5e-YBh" firstAttribute="top" secondItem="kA0-Oj-Dej" secondAttribute="bottom" constant="14" id="Mbs-kf-8Ck"/>
                             <constraint firstItem="91k-Lf-p7k" firstAttribute="leading" secondItem="MCf-sY-uyw" secondAttribute="leading" id="U61-uE-seL"/>
                             <constraint firstItem="7CI-Mj-a8T" firstAttribute="top" secondItem="LWl-CB-OB3" secondAttribute="bottom" constant="16" id="WKj-L4-fDg"/>
+                            <constraint firstItem="aU4-5e-YBh" firstAttribute="centerX" secondItem="XOH-Ox-kuG" secondAttribute="centerX" id="ZEo-lt-3Cl"/>
+                            <constraint firstItem="LWl-CB-OB3" firstAttribute="top" secondItem="aU4-5e-YBh" secondAttribute="bottom" constant="18.5" id="bOR-8j-qEF"/>
                             <constraint firstItem="LWl-CB-OB3" firstAttribute="centerY" secondItem="XOH-Ox-kuG" secondAttribute="centerY" id="eiI-dx-lR6"/>
                             <constraint firstItem="7CI-Mj-a8T" firstAttribute="leading" secondItem="LWl-CB-OB3" secondAttribute="leading" id="ftz-i0-Aei"/>
+                            <constraint firstItem="kA0-Oj-Dej" firstAttribute="centerX" secondItem="OK0-Dj-BA5" secondAttribute="centerX" id="max-PH-RpZ"/>
+                            <constraint firstItem="kA0-Oj-Dej" firstAttribute="centerX" secondItem="XOH-Ox-kuG" secondAttribute="centerX" id="p67-H5-G51"/>
                             <constraint firstItem="LWl-CB-OB3" firstAttribute="centerX" secondItem="XOH-Ox-kuG" secondAttribute="centerX" id="rWA-Ge-IWU"/>
+                            <constraint firstItem="kA0-Oj-Dej" firstAttribute="top" secondItem="OK0-Dj-BA5" secondAttribute="bottom" constant="28" id="s0d-d4-yPp"/>
+                            <constraint firstItem="600-zU-ykw" firstAttribute="leading" secondItem="kA0-Oj-Dej" secondAttribute="trailing" constant="11" id="uxr-Be-smi"/>
+                            <constraint firstItem="kA0-Oj-Dej" firstAttribute="top" secondItem="600-zU-ykw" secondAttribute="top" id="vvQ-4G-UvH"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Food Detail" id="lMv-in-gia"/>
                     <navigationItem key="navigationItem" id="Knb-Iw-ATe"/>
                     <connections>
+                        <outlet property="foodCountLabel" destination="aU4-5e-YBh" id="9ut-M4-v8J"/>
                         <outlet property="foodName" destination="OK0-Dj-BA5" id="NfL-kR-ZLq"/>
                         <outlet property="foodPriceLabel" destination="600-zU-ykw" id="ae6-XP-tvV"/>
                         <outlet property="imageView" destination="BMz-DZ-fu6" id="Z1B-2k-bm4"/>
