@@ -18,8 +18,13 @@ class FoodDetail: UIViewController {
     var food : Foods?
     var viewModel = FoodDetailViewModel()
     
+    
     @IBAction func stepperClicked(_ sender: UIStepper) {
         foodCountLabel.text = String(Int(sender.value))
+        
+        let totalPrice = Int(sender.value) * Int((food?.yemek_fiyat)!)!
+       foodPriceLabel.text = String(totalPrice)
+        
     }
     @IBOutlet weak var foodPriceLabel: UILabel!
     override func viewDidLoad() {

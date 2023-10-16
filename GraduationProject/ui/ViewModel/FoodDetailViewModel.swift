@@ -27,4 +27,6 @@ class FoodDetailViewModel {
     func getCart(kullanici_adi:String){
         fRepo.getCartFood(kullanici_adi: kullanici_adi)
     }
+    
+    
 }
