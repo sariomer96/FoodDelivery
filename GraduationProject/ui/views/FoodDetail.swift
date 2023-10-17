@@ -59,11 +59,7 @@ class FoodDetail: UIViewController {
         foodName.text = yemek
         foodPriceLabel.text = f.yemek_fiyat
     }
-    
-    @IBAction func backToHome(_ sender: Any) {
-        performSegue(withIdentifier: "toHome", sender: nil)
-        
-    }
+   
     
     @IBAction func addToCart(_ sender: Any) {
 

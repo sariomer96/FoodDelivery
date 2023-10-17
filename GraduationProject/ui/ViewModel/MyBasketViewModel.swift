@@ -11,6 +11,7 @@ class MyBasketViewModel {
     
     var fRepo = FoodDaoRepository()
     var basketList = BehaviorSubject<[BasketFoods]>(value: [BasketFoods]())
+    var totalPrice = 0
     
     init(){
         basketList = fRepo.basketList
@@ -19,6 +20,7 @@ class MyBasketViewModel {
     func deleteFoodOnBasket(sepet_yemek_id:Int,kullanici_adi:String){
         fRepo.deleteFoodOnBasket(sepet_yemek_id: sepet_yemek_id, kullanici_adi: kullanici_adi)
     }
+    
     
    
     

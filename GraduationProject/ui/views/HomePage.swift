@@ -21,9 +21,14 @@ class HomePage: UIViewController {
         
         foodCollectionView.delegate = self
         foodCollectionView.dataSource = self
+        self.viewModel.getFoods()
+        self.refreshList()
         _ = viewModel.foodList.subscribe(onNext: {  list in
+           
+         
             self.foodList = list
       
+          
             DispatchQueue.main.async {
    
              
@@ -39,9 +44,16 @@ class HomePage: UIViewController {
         })
         // Do any additional setup after loading the view.
     }
-    override func viewWillAppear(_ animated: Bool) {
-        viewModel.getFoods()
+    func refreshList(){
+        
+        self.foodList.removeAll()
+        self.imageList.removeAll()
+        self.foodNameList.removeAll()
+        self.foodPriceList.removeAll()
+        
+        
     }
+ 
  
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toDetail" {

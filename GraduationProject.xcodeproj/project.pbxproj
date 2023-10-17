@@ -29,6 +29,7 @@
 		172AC2D72AD6BF5000713D36 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172AC2D62AD6BF5000713D36 /* CollectionViewCell.swift */; };
 		172AC2DA2AD6D09500713D36 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 172AC2D92AD6D09500713D36 /* SDWebImage */; };
 		172AC2DE2ADD6E5600713D36 /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172AC2DD2ADD6E5600713D36 /* CartTableViewCell.swift */; };
+		172AC2E02ADEE1C300713D36 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172AC2DF2ADEE1C300713D36 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		172AC2D42AD5D9D000713D36 /* BasketResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketResponse.swift; sourceTree = "<group>"; };
 		172AC2D62AD6BF5000713D36 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		172AC2DD2ADD6E5600713D36 /* CartTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		172AC2DF2ADEE1C300713D36 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				172AC2A12AD52E4300713D36 /* SceneDelegate.swift */,
 				172AC2DD2ADD6E5600713D36 /* CartTableViewCell.swift */,
 				172AC2A52AD52E4300713D36 /* Main.storyboard */,
+				172AC2DF2ADEE1C300713D36 /* Constants.swift */,
 				172AC2A82AD52E4800713D36 /* Assets.xcassets */,
 				172AC2AA2AD52E4800713D36 /* LaunchScreen.storyboard */,
 				172AC2AD2AD52E4800713D36 /* Info.plist */,
@@ -250,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				172AC2D52AD5D9D000713D36 /* BasketResponse.swift in Sources */,
+				172AC2E02ADEE1C300713D36 /* Constants.swift in Sources */,
 				172AC2BB2AD53A0100713D36 /* MyBasketViewModel.swift in Sources */,
 				172AC2A42AD52E4300713D36 /* HomePage.swift in Sources */,
 				172AC2CB2AD53F3E00713D36 /* CRUDResponse.swift in Sources */,

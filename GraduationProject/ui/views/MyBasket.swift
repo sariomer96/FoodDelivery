@@ -9,47 +9,55 @@ import UIKit
 import SDWebImage
 class MyBasket: UIViewController {
 
-    @IBOutlet weak var deleteAllElement: UIButton!
+ 
+    @IBOutlet weak var totalPriceLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     var basketList = [BasketFoods]()
     var viewModel = MyBasketViewModel()
     let userName = "s_omer_sari"
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         tableView.dataSource = self
         tableView.delegate = self
-        self.getBasket()
+       
 
+       
+            self.getBasket()
+       
+        
+       
         _ = viewModel.basketList.subscribe(onNext: {  list in
             self.basketList = list
       
   
             DispatchQueue.main.async {
                 
-           
+                let total = self.getTotalPrice(basketList: self.basketList)
+                print("\(total)   \(self.basketList.count)")
+                  
+                  self.totalPriceLabel.text = String(total)
+                self.totalPriceLabel.text! += Constants.shared.tl
               
              self.tableView.reloadData()
             }
         })
+        
+     
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func BackClick(_ sender: Any) {
-        self.dismiss(animated: true)
-    }
-    @IBAction func deleteAllElementClicked(_ sender: Any) {
+   
+    func getTotalPrice(basketList:[BasketFoods]) -> Int {
         
-        DispatchQueue.main.async {
+        for i in basketList {
             
-            for i in self.basketList {
-            
-                self.viewModel.deleteFoodOnBasket(sepet_yemek_id: Int(i.sepet_yemek_id!)!, kullanici_adi: i.kullanici_adi!)
-            }
-            
-            self.tableView.reloadData()
+            viewModel.totalPrice += Int(i.yemek_fiyat!)!
         }
+        
+        return viewModel.totalPrice
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -57,11 +65,19 @@ class MyBasket: UIViewController {
     }
 
     
-
-    @IBAction func deleteBasket(_ sender: Any) {
-        viewModel.deleteFoodOnBasket(sepet_yemek_id: 103055, kullanici_adi: userName)
-        
+    @IBAction func acceptBasket(_ sender: Any) {
+        DispatchQueue.main.async {
+            
+            for i in self.basketList {
+            
+                self.viewModel.deleteFoodOnBasket(sepet_yemek_id: Int(i.sepet_yemek_id!)!, kullanici_adi: i.kullanici_adi!)
+                
+            }
+            
+            self.tableView.reloadData()
+        }
     }
+ 
     
 
     
@@ -94,7 +110,7 @@ extension MyBasket : UITableViewDelegate, UITableViewDataSource {
              
         cell.foodImageView.sd_setImage(with: URL(string: "http://kasimadalan.pe.hu/yemekler/resimler/\(basket.yemek_resim_adi!)"), placeholderImage: UIImage(named: basket.yemek_resim_adi!))
              
-         
+        cell.foodNameLabel.text = basket.yemek_adi!
          
         
         return cell
