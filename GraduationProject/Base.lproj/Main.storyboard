@@ -215,7 +215,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="LwM-Wt-YBg">
-                                <rect key="frame" x="8" y="72" width="398" height="742"/>
+                                <rect key="frame" x="8" y="72" width="398" height="622"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="TableViewCell" rowHeight="120" id="QW0-T1-hN7" customClass="CartTableViewCell" customModule="GraduationProject" customModuleProvider="target">
@@ -229,37 +229,37 @@
                                                     <rect key="frame" x="20" y="0.0" width="115" height="120"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YEMEK_ADI" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hna-Zh-AHQ">
-                                                    <rect key="frame" x="163" y="4" width="92" height="21"/>
+                                                    <rect key="frame" x="163" y="4" width="92" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fiyat :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jH1-ys-bHM">
-                                                    <rect key="frame" x="143" y="33" width="46" height="21"/>
+                                                    <rect key="frame" x="143.5" y="32.5" width="45.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Adet :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qkj-gw-ZpK">
-                                                    <rect key="frame" x="143" y="58" width="45" height="21"/>
+                                                    <rect key="frame" x="143" y="57" width="45" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbc-aF-RrI">
-                                                    <rect key="frame" x="197" y="33" width="10.5" height="21"/>
+                                                    <rect key="frame" x="197" y="32.5" width="10.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgz-Zc-l1M">
-                                                    <rect key="frame" x="190" y="58" width="11" height="21"/>
+                                                    <rect key="frame" x="190" y="57" width="10.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TJZ-Hu-nlj">
-                                                    <rect key="frame" x="341" y="88" width="37" height="21"/>
+                                                    <rect key="frame" x="341" y="88.5" width="37" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -302,11 +302,46 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPx-dK-jXA">
-                                <rect key="frame" x="131" y="64" width="152" height="35"/>
+                                <rect key="frame" x="131" y="64" width="152" height="34.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="TUM LISTEYI SIL"/>
                                 <connections>
                                     <action selector="deleteAllElementClicked:" destination="BDm-JL-2j7" eventType="touchUpInside" id="VSR-D7-yfS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6j5-3P-7za">
+                                <rect key="frame" x="36" y="754" width="342" height="44"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="SEPETI ONAYLA" buttonSize="large">
+                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                    <color key="baseForegroundColor" red="0.01176470588" green="0.058823529409999999" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
+                                </buttonConfiguration>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="250" translatesAutoresizingMaskIntoConstraints="NO" id="5Gh-6A-Gic">
+                                <rect key="frame" x="18" y="699.5" width="378.5" height="23"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toplam:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dgd-NA-hTD">
+                                        <rect key="frame" x="0.0" y="0.0" width="65" height="23"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="555 TL" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryV-iw-mXm">
+                                        <rect key="frame" x="315" y="0.0" width="63.5" height="23"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rDz-pM-2Ql">
+                                <rect key="frame" x="-7" y="0.0" width="90" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="CANCEL"/>
+                                <connections>
+                                    <action selector="BackClick:" destination="BDm-JL-2j7" eventType="touchUpInside" id="FJz-pc-yBp"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -314,10 +349,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="LwM-Wt-YBg" firstAttribute="top" secondItem="2Az-FH-t0M" secondAttribute="top" constant="24" id="8R5-lj-arZ"/>
+                            <constraint firstItem="6j5-3P-7za" firstAttribute="leading" secondItem="2Az-FH-t0M" secondAttribute="leading" constant="36" id="Iib-Lr-Afd"/>
                             <constraint firstItem="LwM-Wt-YBg" firstAttribute="leading" secondItem="2Az-FH-t0M" secondAttribute="leading" constant="8" id="M7Q-1T-Wq0"/>
                             <constraint firstItem="GPx-dK-jXA" firstAttribute="centerX" secondItem="t70-hA-9Lv" secondAttribute="centerX" id="Rbs-QZ-MVM"/>
-                            <constraint firstItem="2Az-FH-t0M" firstAttribute="bottom" secondItem="LwM-Wt-YBg" secondAttribute="bottom" constant="24" id="XYD-7b-owI"/>
+                            <constraint firstItem="5Gh-6A-Gic" firstAttribute="centerX" secondItem="t70-hA-9Lv" secondAttribute="centerX" id="XFT-Jw-OfQ"/>
+                            <constraint firstItem="2Az-FH-t0M" firstAttribute="bottom" secondItem="LwM-Wt-YBg" secondAttribute="bottom" constant="144" id="XYD-7b-owI"/>
+                            <constraint firstItem="2Az-FH-t0M" firstAttribute="bottom" secondItem="6j5-3P-7za" secondAttribute="bottom" constant="40" id="bI4-Pu-Hhm"/>
+                            <constraint firstItem="6j5-3P-7za" firstAttribute="top" secondItem="5Gh-6A-Gic" secondAttribute="bottom" constant="31.5" id="jys-kU-mlW"/>
                             <constraint firstItem="GPx-dK-jXA" firstAttribute="top" secondItem="2Az-FH-t0M" secondAttribute="top" constant="16" id="pQF-os-AR4"/>
+                            <constraint firstItem="2Az-FH-t0M" firstAttribute="trailing" secondItem="6j5-3P-7za" secondAttribute="trailing" constant="36" id="q30-s6-etK"/>
                             <constraint firstItem="2Az-FH-t0M" firstAttribute="trailing" secondItem="LwM-Wt-YBg" secondAttribute="trailing" constant="8" id="wNo-Nx-dlf"/>
                         </constraints>
                     </view>
@@ -365,6 +405,9 @@
         <image name="trash.fill" catalog="system" width="119" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

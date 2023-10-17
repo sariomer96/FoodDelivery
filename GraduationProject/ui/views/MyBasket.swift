@@ -13,7 +13,7 @@ class MyBasket: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     var basketList = [BasketFoods]()
     var viewModel = MyBasketViewModel()
-    
+    let userName = "s_omer_sari"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +36,9 @@ class MyBasket: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func BackClick(_ sender: Any) {
+        self.dismiss(animated: true)
+    }
     @IBAction func deleteAllElementClicked(_ sender: Any) {
         
         DispatchQueue.main.async {
@@ -56,7 +59,7 @@ class MyBasket: UIViewController {
     
 
     @IBAction func deleteBasket(_ sender: Any) {
-        viewModel.deleteFoodOnBasket(sepet_yemek_id: 103055, kullanici_adi: "s_omer_sari")
+        viewModel.deleteFoodOnBasket(sepet_yemek_id: 103055, kullanici_adi: userName)
         
     }
     
@@ -68,6 +71,7 @@ extension MyBasket : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         basketList.count
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -99,13 +103,13 @@ extension MyBasket : UITableViewDelegate, UITableViewDataSource {
     @objc func deleteCell(id : UIButton){
         
         DispatchQueue.main.async {
-            self.viewModel.deleteFoodOnBasket(sepet_yemek_id: id.tag, kullanici_adi: "s_omer_sari")
+            self.viewModel.deleteFoodOnBasket(sepet_yemek_id: id.tag, kullanici_adi: self.userName)
             self.tableView.reloadData()
         }
        
     }
     func getBasket() {
-        viewModel.fRepo.getCartFood(kullanici_adi: "s_omer_sari")
+        viewModel.fRepo.getCartFood(kullanici_adi: userName)
     }
     
     
