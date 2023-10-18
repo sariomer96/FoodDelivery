@@ -20,6 +20,7 @@ class FoodDetail: UIViewController {
     var foodCount = 1
     var foodPrice = 0
     var basketList = [BasketFoods]()
+    
     @IBAction func stepperClicked(_ sender: UIStepper) {
         foodCountLabel.text = String(Int(sender.value))
         foodCount = Int(sender.value)
@@ -32,7 +33,12 @@ class FoodDetail: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.getCart(kullanici_adi: "s_omer_sari")
+        
+        viewModel.getCart(kullanici_adi: "s_omer_sari") { result  in
+            
+        
+        }
+        
         _ = viewModel.basketList.subscribe(onNext: {  list in
             self.basketList = list
         
@@ -59,27 +65,80 @@ class FoodDetail: UIViewController {
         foodName.text = yemek
         foodPriceLabel.text = f.yemek_fiyat
     }
-   
-    
-    @IBAction func addToCart(_ sender: Any) {
-
-        
-        if let food = food {
+     
+    func test(completion: @escaping (Result<Int, Constants.NetworkE>) -> Void){
+        if let food = self.food {
             
-            print(basketList.count)
-            for i in basketList {
+           
+            var esit = false
+            for (index, i) in self.basketList.enumerated() {
              
                 if i.yemek_adi == food.yemek_adi {
-                
-                  
-                    viewModel.updateCart(sepet_id: Int(i.sepet_yemek_id!)!, yemek_adi: i.yemek_adi!, yemek_resim_adi: i.yemek_resim_adi!, yemek_fiyat: Int(i.yemek_fiyat!)!, yemek_siparis_adet: Int(i.yemek_siparis_adet!)!, kullanici_adi: i.kullanici_adi!)
-                    return
+
+                    
+                       esit = true
+                    self.viewModel.fRepo.deleteFoodOnBasket(sepet_yemek_id: Int(i.sepet_yemek_id!)! , kullanici_adi: "s_omer_sari"){ result in
+                        
+          
+                                 print("deleted")
+                              self.viewModel.addToCart(yemek_adi: food.yemek_adi!, yemek_resim_adi: food.yemek_resim_adi!, yemek_fiyat: self.foodPrice + Int(i.yemek_fiyat!)!, yemek_siparis_adet: Int(i.yemek_siparis_adet!)! + self.foodCount, kullanici_adi: "s_omer_sari")
+                        print("replace")
+                        completion(.success(1))
+                              
+                    }
+              
                 }
+              }
+ 
+            if esit == false {
+                
+               self.viewModel.addToCart(yemek_adi: food.yemek_adi!, yemek_resim_adi: food.yemek_resim_adi!, yemek_fiyat: self.foodPrice, yemek_siparis_adet: self.foodCount, kullanici_adi: "s_omer_sari")
             }
-            print("add")
-            viewModel.addToCart(yemek_adi: food.yemek_adi!, yemek_resim_adi: food.yemek_resim_adi!, yemek_fiyat: foodPrice, yemek_siparis_adet: foodCount, kullanici_adi: "s_omer_sari")
         }
-     
+    }
+    
+    
+    
+    @IBAction func addToCart(_ sender: Any) {
+ 
+        
+        viewModel.fRepo.getCartFood(kullanici_adi: "s_omer_sari") { result  in
+             
+            print(result)
+            print("resultt")
+            self.test() { res in
+                
+            }
+//            if let food = self.food {
+//
+//
+//
+//                for (index, i) in self.basketList.enumerated() {
+//
+//                    if i.yemek_adi == food.yemek_adi {
+//
+//                        print("denk")
+//
+//                        self.viewModel.fRepo.deleteFoodOnBasket(sepet_yemek_id: Int(i.sepet_yemek_id!)! , kullanici_adi: "s_omer_sari"){ result in
+//
+//
+//                                     print("deleted")
+//                                  self.viewModel.addToCart(yemek_adi: food.yemek_adi!, yemek_resim_adi: food.yemek_resim_adi!, yemek_fiyat: self.foodPrice + Int(i.yemek_fiyat!)!, yemek_siparis_adet: Int(i.yemek_siparis_adet!)! + self.foodCount, kullanici_adi: "s_omer_sari")
+//
+//                                  return
+//                        }
+//
+//                    }
+//                  }
+////                print("adddd")
+//               self.viewModel.addToCart(yemek_adi: food.yemek_adi!, yemek_resim_adi: food.yemek_resim_adi!, yemek_fiyat: self.foodPrice, yemek_siparis_adet: self.foodCount, kullanici_adi: "s_omer_sari")
+//            }
+//
+        
+        }
+        
+        
+       
        
     }
     

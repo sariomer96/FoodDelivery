@@ -14,5 +14,8 @@ class Constants {
     private init () { }
     
     
-    
+    enum NetworkE:Error {
+        case badUrl
+        
+    }
 }

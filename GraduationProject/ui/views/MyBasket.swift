@@ -24,26 +24,7 @@ class MyBasket: UIViewController {
         tableView.delegate = self
        
 
-       
-            self.getBasket()
-       
-        
-       
-        _ = viewModel.basketList.subscribe(onNext: {  list in
-            self.basketList = list
       
-  
-            DispatchQueue.main.async {
-                
-                let total = self.getTotalPrice(basketList: self.basketList)
-                print("\(total)   \(self.basketList.count)")
-                  
-                  self.totalPriceLabel.text = String(total)
-                self.totalPriceLabel.text! += Constants.shared.tl
-              
-             self.tableView.reloadData()
-            }
-        })
         
      
         // Do any additional setup after loading the view.
@@ -61,6 +42,26 @@ class MyBasket: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
+             self.getBasket()
+        
+         
+        
+         _ = viewModel.basketList.subscribe(onNext: {  list in
+             self.basketList = list
+       
+   
+             DispatchQueue.main.async {
+                 
+                 let total = self.getTotalPrice(basketList: self.basketList)
+                 
+                   
+                   self.totalPriceLabel.text = String(total)
+                 self.totalPriceLabel.text! += Constants.shared.tl
+               
+              self.tableView.reloadData()
+             }
+         })
         self.tableView.reloadData()
     }
 
@@ -70,7 +71,7 @@ class MyBasket: UIViewController {
             
             for i in self.basketList {
             
-                self.viewModel.deleteFoodOnBasket(sepet_yemek_id: Int(i.sepet_yemek_id!)!, kullanici_adi: i.kullanici_adi!)
+                self.viewModel.deleteFoodOnBasket(sepet_yemek_id: Int(i.sepet_yemek_id!)!, kullanici_adi: i.kullanici_adi!) { result in }
                 
             }
             
@@ -118,14 +119,16 @@ extension MyBasket : UITableViewDelegate, UITableViewDataSource {
     
     @objc func deleteCell(id : UIButton){
         
-        DispatchQueue.main.async {
-            self.viewModel.deleteFoodOnBasket(sepet_yemek_id: id.tag, kullanici_adi: self.userName)
+  
+        self.viewModel.deleteFoodOnBasket(sepet_yemek_id: id.tag, kullanici_adi: self.userName) { res in }
             self.tableView.reloadData()
-        }
+         
        
     }
     func getBasket() {
-        viewModel.fRepo.getCartFood(kullanici_adi: userName)
+        viewModel.fRepo.getCartFood(kullanici_adi: userName) { result in
+            
+        }
     }
     
     
