@@ -9,27 +9,26 @@ import UIKit
 import SDWebImage
 class MyBasket: UIViewController {
 
- 
+    @IBOutlet weak var tableViewCart: UITableView!
+    
     @IBOutlet weak var totalPriceLabel: UILabel!
-    @IBOutlet weak var tableView: UITableView!
+ 
     var basketList = [BasketFoods]()
     var viewModel = MyBasketViewModel()
     let userName = "s_omer_sari"
    
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        tableView.dataSource = self
-        tableView.delegate = self
-       
-
-      
-        
-     
-        // Do any additional setup after loading the view.
-    }
-    
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//
+//
+//
+//
+//
+//        // Do any additional setup after loading the view.
+//    }
+//
    
     func getTotalPrice(basketList:[BasketFoods]) -> Int {
         
@@ -41,8 +40,13 @@ class MyBasket: UIViewController {
         return viewModel.totalPrice
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewDidLoad() {
         
+//        tableView.dataSource = self
+//        tableView.delegate = self
+        tableViewCart.dataSource = self
+        tableViewCart.delegate = self
+            super.viewDidLoad()
              self.getBasket()
         
          
@@ -55,28 +59,43 @@ class MyBasket: UIViewController {
                  
                  let total = self.getTotalPrice(basketList: self.basketList)
                  
-                   
+                   print("ree")
                    self.totalPriceLabel.text = String(total)
                  self.totalPriceLabel.text! += Constants.shared.tl
                
-              self.tableView.reloadData()
+              self.tableViewCart.reloadData()
              }
          })
-        self.tableView.reloadData()
+      
     }
 
     
     @IBAction func acceptBasket(_ sender: Any) {
         DispatchQueue.main.async {
             
-            for i in self.basketList {
-            
-                self.viewModel.deleteFoodOnBasket(sepet_yemek_id: Int(i.sepet_yemek_id!)!, kullanici_adi: i.kullanici_adi!) { result in }
+            for (index, i) in self.basketList.enumerated() {
+                print("\(index)  \(self.basketList.endIndex - 1)")
+                
+                
+                if index == (self.basketList.endIndex - 1) {
+                    print("esitttt")
+                    self.viewModel.fRepo.deleteFoodOnBasket(sepet_yemek_id: Int(i.sepet_yemek_id!)!, kullanici_adi: i.kullanici_adi!) { result in
+                        print("work")
+                        self.getBasket()
+                    }
+                }else{
+                  
+                    self.viewModel.fRepo.deleteFoodOnBasket(sepet_yemek_id: Int(i.sepet_yemek_id!)!, kullanici_adi: i.kullanici_adi!) { result in
+                        
+                    }
+                }
+                
                 
             }
             
-            self.tableView.reloadData()
+           
         }
+    
     }
  
     
@@ -120,16 +139,27 @@ extension MyBasket : UITableViewDelegate, UITableViewDataSource {
     @objc func deleteCell(id : UIButton){
         
   
-        self.viewModel.deleteFoodOnBasket(sepet_yemek_id: id.tag, kullanici_adi: self.userName) { res in }
-            self.tableView.reloadData()
-         
        
-    }
+            self.viewModel.fRepo.deleteFoodOnBasket(sepet_yemek_id: id.tag, kullanici_adi: self.userName) { res in
+                
+               
+                    
+                self.getBasket()
+                
+            }
+        }
+        
+        
+           
     func getBasket() {
         viewModel.fRepo.getCartFood(kullanici_adi: userName) { result in
-            
+           
         }
+   
     }
+       
+    }
+  
     
     
-}
+

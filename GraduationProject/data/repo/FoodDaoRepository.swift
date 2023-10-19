@@ -145,10 +145,6 @@ class FoodDaoRepository {
         let params:Parameters = ["kullanici_adi":kullanici_adi]
                 AF.request("http://kasimadalan.pe.hu/yemekler/sepettekiYemekleriGetir.php",method: .post,parameters: params).response {
                     response in
-                     
-                   
-              
-          
                     if let data = response.data {
                         do{
                             print("response \(response.data)")
@@ -157,14 +153,18 @@ class FoodDaoRepository {
                             if let list = cevap.sepet_yemekler {
                                 self.basketList.onNext(list)
                               
-                                
+                                print("scsc")
                                 completion(.success(1))
                             }
                         
                         }catch{
                            
                              print("\(error.localizedDescription)  HATA")
-                          
+                            var emptyList = [BasketFoods]()
+                           
+                      
+                            
+                            self.basketList.onNext(emptyList)
                             completion(.success(1))
                            
                         }
@@ -181,10 +181,15 @@ class FoodDaoRepository {
                         do{
                             var cevap = try JSONDecoder().decode(CRUDResponse.self, from: data)
                                //success
-                            completion(.success(1))
-                            print("succesDeleteFood")
+                            
+                            if let resp = cevap.success {
+                                print("succesDeleteFood")
+                                completion(.success(1))
+                            }
+                           
+                         
                         }catch{
-                             print(error.localizedDescription)
+                             print("\(error.localizedDescription)   ERROOOr")
                              
                             print("errorDeleteFood")
                         }

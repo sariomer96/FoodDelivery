@@ -18,7 +18,9 @@ class MyBasketViewModel {
     }
     
     func deleteFoodOnBasket(sepet_yemek_id:Int,kullanici_adi:String,completion: @escaping (Result<Int, Constants.NetworkE>) -> Void){
-        fRepo.deleteFoodOnBasket(sepet_yemek_id: sepet_yemek_id, kullanici_adi: kullanici_adi) { result in}
+        fRepo.deleteFoodOnBasket(sepet_yemek_id: sepet_yemek_id, kullanici_adi: kullanici_adi) { result in
+          
+        }
     }
     
     

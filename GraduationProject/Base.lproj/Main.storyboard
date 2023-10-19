@@ -337,7 +337,7 @@
                     <tabBarItem key="tabBarItem" title="Add To Cart" id="yFS-ZW-tZN"/>
                     <navigationItem key="navigationItem" id="SrZ-dp-yQu"/>
                     <connections>
-                        <outlet property="tableView" destination="LwM-Wt-YBg" id="YzQ-mg-jf6"/>
+                        <outlet property="tableViewCart" destination="LwM-Wt-YBg" id="sGS-El-fdu"/>
                         <outlet property="totalPriceLabel" destination="ryV-iw-mXm" id="ESe-Ub-Ycs"/>
                     </connections>
                 </viewController>
@@ -352,6 +352,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="5JO-jX-hkG"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="08i-Kd-ERn">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

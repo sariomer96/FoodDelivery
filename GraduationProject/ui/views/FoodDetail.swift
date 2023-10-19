@@ -66,7 +66,7 @@ class FoodDetail: UIViewController {
         foodPriceLabel.text = f.yemek_fiyat
     }
      
-    func test(completion: @escaping (Result<Int, Constants.NetworkE>) -> Void){
+    func addChart(completion: @escaping (Result<Int, Constants.NetworkE>) -> Void){
         if let food = self.food {
             
            
@@ -106,35 +106,10 @@ class FoodDetail: UIViewController {
              
             print(result)
             print("resultt")
-            self.test() { res in
+            self.addChart() { res in
                 
             }
-//            if let food = self.food {
-//
-//
-//
-//                for (index, i) in self.basketList.enumerated() {
-//
-//                    if i.yemek_adi == food.yemek_adi {
-//
-//                        print("denk")
-//
-//                        self.viewModel.fRepo.deleteFoodOnBasket(sepet_yemek_id: Int(i.sepet_yemek_id!)! , kullanici_adi: "s_omer_sari"){ result in
-//
-//
-//                                     print("deleted")
-//                                  self.viewModel.addToCart(yemek_adi: food.yemek_adi!, yemek_resim_adi: food.yemek_resim_adi!, yemek_fiyat: self.foodPrice + Int(i.yemek_fiyat!)!, yemek_siparis_adet: Int(i.yemek_siparis_adet!)! + self.foodCount, kullanici_adi: "s_omer_sari")
-//
-//                                  return
-//                        }
-//
-//                    }
-//                  }
-////                print("adddd")
-//               self.viewModel.addToCart(yemek_adi: food.yemek_adi!, yemek_resim_adi: food.yemek_resim_adi!, yemek_fiyat: self.foodPrice, yemek_siparis_adet: self.foodCount, kullanici_adi: "s_omer_sari")
-//            }
-//
-        
+
         }
         
         
