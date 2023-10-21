@@ -115,9 +115,15 @@ extension MyBasket : UITableViewDelegate, UITableViewDataSource {
         
         cell.deleteClick.addTarget(self, action: #selector(deleteCell(id: )), for: .touchUpInside)
         
+             let price = Int( basket.yemek_fiyat!)
+             let amount = Int(basket.yemek_siparis_adet!)
+        
+             let priceAmount = price! / amount!
+            
+             cell.priceLabel.text = "\(Constants.shared.tl) \(priceAmount)"
              cell.countLabel.text = basket.yemek_siparis_adet
-             cell.totalPriceLabel.text = basket.yemek_fiyat
-             
+             cell.totalPriceLabel.text = "\(Constants.shared.tl) \(basket.yemek_fiyat!)"
+         
              
         cell.foodImageView.sd_setImage(with: URL(string: "http://kasimadalan.pe.hu/yemekler/resimler/\(basket.yemek_resim_adi!)"), placeholderImage: UIImage(named: basket.yemek_resim_adi!))
              
