@@ -10,6 +10,7 @@ import SDWebImage
 
 final class HomePage: UIViewController {
 
+    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet  private weak var foodCollectionView: UICollectionView!
     private var foodList = [Foods]()
     private var imageList = [String]()
@@ -23,6 +24,8 @@ final class HomePage: UIViewController {
         configureCallBacks()
         viewModel.getFoods()
         refreshList()
+        
+        edgesForExtendedLayout = UIRectEdge.bottom
     }
 
     private func initViews() {
@@ -67,7 +70,7 @@ final class HomePage: UIViewController {
 
 extension HomePage : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print(imageList.count)
+        
         return imageList.count
     }
     
@@ -83,13 +86,14 @@ extension HomePage : UICollectionViewDelegate, UICollectionViewDataSource, UICol
         
 
         cell.labelUrunAdi.text = foodNameList[indexPath.row]
-        cell.labelFiyat.text = foodPriceList[indexPath.row]
+        cell.labelFiyat.text = "\(Constants.shared.tl) \(foodPriceList[indexPath.row])"
         
         cell.imageView.sd_setImage(with: URL(string: "http://kasimadalan.pe.hu/yemekler/resimler/\(imageList[indexPath.row])"), placeholderImage: UIImage(named: imageList[indexPath.row]))
         return cell
         
     }
 
+  
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenWidth = UIScreen.main.bounds.width
         // 32 constraints + inter space
