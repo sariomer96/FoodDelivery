@@ -30,10 +30,10 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionViewCell" id="dTJ-T6-Wfh" customClass="CollectionViewCell" customModule="GraduationProject" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="180" height="282"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="180" height="292"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="IwX-Xt-UG5">
-                                            <rect key="frame" x="0.0" y="0.0" width="180" height="282"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="180" height="292"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REO-CM-oJa" userLabel="Favorite Button">
@@ -53,13 +53,13 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Urun_AdiUrun_AdiUrun_AdiUrun_AdiUrun_AdiUrun_AdiUrun_AdiUrun_Adi" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MIC-WN-FNy">
-                                                    <rect key="frame" x="8" y="200" width="172" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="8" y="200" width="172" height="23"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sg4-gc-EpD">
-                                                    <rect key="frame" x="146" y="255" width="19" height="19"/>
+                                                    <rect key="frame" x="146" y="265" width="19" height="19"/>
                                                     <color key="backgroundColor" red="0.092535398899999996" green="0.11729977279999999" blue="0.27060288189999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="19" id="9Hi-9t-whz"/>
@@ -72,8 +72,8 @@
                                                     </buttonConfiguration>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="15 TL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lT2-NL-7ye">
-                                                    <rect key="frame" x="8" y="255" width="146" height="22"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <rect key="frame" x="8" y="257" width="146" height="30"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -128,7 +128,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="house.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="foW-LA-725">
-                                <rect key="frame" x="350" y="89" width="30" height="30"/>
+                                <rect key="frame" x="350" y="89.666666666666657" width="30" height="29.333333333333343"/>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="JpL-Pt-GOJ"/>
@@ -188,7 +188,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BMz-DZ-fu6">
-                                <rect key="frame" x="98" y="192.33333333333337" width="234" height="156"/>
+                                <rect key="frame" x="98" y="192.33333333333337" width="232" height="156"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="156" id="793-BY-igM"/>
                                 </constraints>
@@ -275,7 +275,7 @@
                             <constraint firstItem="TvJ-Jj-i2U" firstAttribute="top" secondItem="HYR-ni-jCc" secondAttribute="bottom" constant="7" id="5XE-G2-zk5"/>
                             <constraint firstItem="BMz-DZ-fu6" firstAttribute="top" secondItem="TvJ-Jj-i2U" secondAttribute="bottom" constant="42" id="6Hk-SP-ql1"/>
                             <constraint firstItem="600-zU-ykw" firstAttribute="leading" secondItem="MCf-sY-uyw" secondAttribute="leading" constant="56" id="7JC-y0-01Z"/>
-                            <constraint firstItem="MCf-sY-uyw" firstAttribute="trailing" secondItem="BMz-DZ-fu6" secondAttribute="trailing" constant="96" id="Aur-aX-nBv"/>
+                            <constraint firstItem="MCf-sY-uyw" firstAttribute="trailing" secondItem="BMz-DZ-fu6" secondAttribute="trailing" constant="98" id="Aur-aX-nBv"/>
                             <constraint firstItem="HYR-ni-jCc" firstAttribute="centerX" secondItem="XOH-Ox-kuG" secondAttribute="centerX" id="CoF-Ov-Coy"/>
                             <constraint firstItem="kA0-Oj-Dej" firstAttribute="top" secondItem="OK0-Dj-BA5" secondAttribute="bottom" constant="25" id="Ib0-4m-aeg"/>
                             <constraint firstItem="BMz-DZ-fu6" firstAttribute="leading" secondItem="MCf-sY-uyw" secondAttribute="leading" constant="98" id="LR6-3a-ewi"/>
