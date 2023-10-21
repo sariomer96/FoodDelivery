@@ -135,14 +135,6 @@
                                     <action selector="addToCart:" destination="f06-4V-hyl" eventType="touchUpInside" id="RLg-4j-57M"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7CI-Mj-a8T">
-                                <rect key="frame" x="150" y="526" width="148.5" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Sepettekini getir"/>
-                                <connections>
-                                    <action selector="getBasket:" destination="f06-4V-hyl" eventType="touchUpInside" id="ZgG-05-TWQ"/>
-                                </connections>
-                            </button>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="kA0-Oj-Dej">
                                 <rect key="frame" x="160" y="390.5" width="94" height="32"/>
                                 <connections>
@@ -181,11 +173,9 @@
                             <constraint firstItem="BMz-DZ-fu6" firstAttribute="top" secondItem="MCf-sY-uyw" secondAttribute="top" constant="67" id="ICp-H1-Hjg"/>
                             <constraint firstItem="BMz-DZ-fu6" firstAttribute="leading" secondItem="MCf-sY-uyw" secondAttribute="leading" constant="77" id="LR6-3a-ewi"/>
                             <constraint firstItem="aU4-5e-YBh" firstAttribute="top" secondItem="kA0-Oj-Dej" secondAttribute="bottom" constant="6.5" id="Mbs-kf-8Ck"/>
-                            <constraint firstItem="7CI-Mj-a8T" firstAttribute="top" secondItem="LWl-CB-OB3" secondAttribute="bottom" constant="8" id="WKj-L4-fDg"/>
                             <constraint firstItem="aU4-5e-YBh" firstAttribute="centerX" secondItem="XOH-Ox-kuG" secondAttribute="centerX" id="ZEo-lt-3Cl"/>
                             <constraint firstItem="LWl-CB-OB3" firstAttribute="top" secondItem="aU4-5e-YBh" secondAttribute="bottom" constant="24" id="bOR-8j-qEF"/>
                             <constraint firstItem="LWl-CB-OB3" firstAttribute="centerY" secondItem="XOH-Ox-kuG" secondAttribute="centerY" constant="52.5" id="eiI-dx-lR6"/>
-                            <constraint firstItem="7CI-Mj-a8T" firstAttribute="leading" secondItem="LWl-CB-OB3" secondAttribute="leading" id="ftz-i0-Aei"/>
                             <constraint firstItem="kA0-Oj-Dej" firstAttribute="centerX" secondItem="OK0-Dj-BA5" secondAttribute="centerX" constant="-1.5" id="max-PH-RpZ"/>
                             <constraint firstItem="kA0-Oj-Dej" firstAttribute="centerX" secondItem="XOH-Ox-kuG" secondAttribute="centerX" id="p67-H5-G51"/>
                             <constraint firstItem="LWl-CB-OB3" firstAttribute="centerX" secondItem="XOH-Ox-kuG" secondAttribute="centerX" id="rWA-Ge-IWU"/>

@@ -34,8 +34,7 @@ class FoodDetail: UIViewController {
         super.viewDidLoad()
         
         
-        viewModel.getCart(kullanici_adi: "s_omer_sari") { result  in
-            
+        viewModel.getCart(kullanici_adi: Constants.shared.userName) { result  in
         
         }
         
@@ -50,9 +49,6 @@ class FoodDetail: UIViewController {
             setFoodImage(food: f)
             setFoodProperties(f: f)
         }
-            
-        
-        
     }
     func setFoodImage(food:Foods){
 
@@ -66,7 +62,7 @@ class FoodDetail: UIViewController {
         foodPriceLabel.text = f.yemek_fiyat
     }
      
-    func addChart(completion: @escaping (Result<Int, Constants.NetworkE>) -> Void){
+    func addChart(completion: @escaping (Result<Int, Constants.Errors>) -> Void){
         if let food = self.food {
             
            
@@ -77,12 +73,9 @@ class FoodDetail: UIViewController {
 
                     
                        esit = true
-                    self.viewModel.fRepo.deleteFoodOnBasket(sepet_yemek_id: Int(i.sepet_yemek_id!)! , kullanici_adi: "s_omer_sari"){ result in
+                    self.viewModel.fRepo.deleteFoodOnBasket(sepet_yemek_id: Int(i.sepet_yemek_id!)! , kullanici_adi: Constants.shared.userName){ result in
+                        self.viewModel.addToCart(yemek_adi: food.yemek_adi!, yemek_resim_adi: food.yemek_resim_adi!, yemek_fiyat: self.foodPrice + Int(i.yemek_fiyat!)!, yemek_siparis_adet: Int(i.yemek_siparis_adet!)! + self.foodCount, kullanici_adi: Constants.shared.userName)
                         
-          
-                                 print("deleted")
-                              self.viewModel.addToCart(yemek_adi: food.yemek_adi!, yemek_resim_adi: food.yemek_resim_adi!, yemek_fiyat: self.foodPrice + Int(i.yemek_fiyat!)!, yemek_siparis_adet: Int(i.yemek_siparis_adet!)! + self.foodCount, kullanici_adi: "s_omer_sari")
-                        print("replace")
                         completion(.success(1))
                               
                     }
@@ -92,36 +85,20 @@ class FoodDetail: UIViewController {
  
             if esit == false {
                 
-               self.viewModel.addToCart(yemek_adi: food.yemek_adi!, yemek_resim_adi: food.yemek_resim_adi!, yemek_fiyat: self.foodPrice, yemek_siparis_adet: self.foodCount, kullanici_adi: "s_omer_sari")
+                self.viewModel.addToCart(yemek_adi: food.yemek_adi!, yemek_resim_adi: food.yemek_resim_adi!, yemek_fiyat: self.foodPrice, yemek_siparis_adet: self.foodCount, kullanici_adi: Constants.shared.userName)
             }
         }
     }
-    
-    
-    
     @IBAction func addToCart(_ sender: Any) {
  
         
         viewModel.fRepo.getCartFood(kullanici_adi: "s_omer_sari") { result  in
-             
-            print(result)
-            print("resultt")
+           
             self.addChart() { res in
                 
             }
 
         }
-        
-        
-       
-       
     }
-    
-    
-
-    @IBAction func getBasket(_ sender: Any) {
-         performSegue(withIdentifier: "toChart", sender: nil)
-    }
-    
-
+     
 }

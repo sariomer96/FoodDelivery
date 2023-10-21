@@ -11,11 +11,16 @@ class Constants {
     
     static let shared = Constants()
     let tl = "₺"
+    let userName = "s_omer_sari"
     private init () { }
     
     
-    enum NetworkE:Error {
-        case badUrl
+    enum Errors:Error {
+        case _const
         
     }
+}
+
+struct ConstantCurrencies {
+    static let TurkishCurrency = "₺"
 }

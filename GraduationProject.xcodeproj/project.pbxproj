@@ -90,13 +90,14 @@
 		172AC29E2AD52E4300713D36 /* GraduationProject */ = {
 			isa = PBXGroup;
 			children = (
-				172AC2C12AD53B7000713D36 /* data */,
-				172AC2BE2AD53B0700713D36 /* ui */,
 				172AC29F2AD52E4300713D36 /* AppDelegate.swift */,
 				172AC2A12AD52E4300713D36 /* SceneDelegate.swift */,
-				172AC2DD2ADD6E5600713D36 /* CartTableViewCell.swift */,
-				172AC2A52AD52E4300713D36 /* Main.storyboard */,
 				172AC2DF2ADEE1C300713D36 /* Constants.swift */,
+				81D1A5022AE31B33005F008D /* Models */,
+				81D1A5032AE31B47005F008D /* Repository */,
+				81D1A5042AE31BF8005F008D /* ViewControllers */,
+				81D1A5082AE33C4F005F008D /* Cells */,
+				172AC2A52AD52E4300713D36 /* Main.storyboard */,
 				172AC2A82AD52E4800713D36 /* Assets.xcassets */,
 				172AC2AA2AD52E4800713D36 /* LaunchScreen.storyboard */,
 				172AC2AD2AD52E4800713D36 /* Info.plist */,
@@ -104,62 +105,7 @@
 			path = GraduationProject;
 			sourceTree = "<group>";
 		};
-		172AC2B72AD539C000713D36 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				172AC2B82AD539E000713D36 /* HomePageViewModel.swift */,
-				172AC2BC2AD53A1100713D36 /* FoodDetailViewModel.swift */,
-				172AC2BA2AD53A0100713D36 /* MyBasketViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		172AC2BE2AD53B0700713D36 /* ui */ = {
-			isa = PBXGroup;
-			children = (
-				172AC2C02AD53B4200713D36 /* views */,
-				172AC2BF2AD53B3600713D36 /* collectionView */,
-				172AC2B72AD539C000713D36 /* ViewModel */,
-			);
-			path = ui;
-			sourceTree = "<group>";
-		};
-		172AC2BF2AD53B3600713D36 /* collectionView */ = {
-			isa = PBXGroup;
-			children = (
-				172AC2D62AD6BF5000713D36 /* CollectionViewCell.swift */,
-			);
-			path = collectionView;
-			sourceTree = "<group>";
-		};
-		172AC2C02AD53B4200713D36 /* views */ = {
-			isa = PBXGroup;
-			children = (
-				172AC2B52AD5392300713D36 /* MyBasket.swift */,
-				172AC2A32AD52E4300713D36 /* HomePage.swift */,
-				172AC2B32AD5329700713D36 /* FoodDetail.swift */,
-			);
-			path = views;
-			sourceTree = "<group>";
-		};
-		172AC2C12AD53B7000713D36 /* data */ = {
-			isa = PBXGroup;
-			children = (
-				172AC2C32AD53B8700713D36 /* entity */,
-				172AC2C22AD53B7F00713D36 /* repo */,
-			);
-			path = data;
-			sourceTree = "<group>";
-		};
-		172AC2C22AD53B7F00713D36 /* repo */ = {
-			isa = PBXGroup;
-			children = (
-				172AC2C42AD53BC100713D36 /* FoodDaoRepository.swift */,
-			);
-			path = repo;
-			sourceTree = "<group>";
-		};
-		172AC2C32AD53B8700713D36 /* entity */ = {
+		81D1A5022AE31B33005F008D /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				172AC2C62AD53CEE00713D36 /* Foods.swift */,
@@ -168,7 +114,61 @@
 				172AC2C82AD53E3B00713D36 /* FoodResponse.swift */,
 				172AC2D42AD5D9D000713D36 /* BasketResponse.swift */,
 			);
-			path = entity;
+			path = Models;
+			sourceTree = "<group>";
+		};
+		81D1A5032AE31B47005F008D /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				172AC2C42AD53BC100713D36 /* FoodDaoRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		81D1A5042AE31BF8005F008D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				81D1A5072AE31C73005F008D /* Basket */,
+				81D1A5062AE31C23005F008D /* FoodDetail */,
+				81D1A5052AE31C10005F008D /* HomePage */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		81D1A5052AE31C10005F008D /* HomePage */ = {
+			isa = PBXGroup;
+			children = (
+				172AC2A32AD52E4300713D36 /* HomePage.swift */,
+				172AC2B82AD539E000713D36 /* HomePageViewModel.swift */,
+			);
+			path = HomePage;
+			sourceTree = "<group>";
+		};
+		81D1A5062AE31C23005F008D /* FoodDetail */ = {
+			isa = PBXGroup;
+			children = (
+				172AC2B32AD5329700713D36 /* FoodDetail.swift */,
+				172AC2BC2AD53A1100713D36 /* FoodDetailViewModel.swift */,
+			);
+			path = FoodDetail;
+			sourceTree = "<group>";
+		};
+		81D1A5072AE31C73005F008D /* Basket */ = {
+			isa = PBXGroup;
+			children = (
+				172AC2B52AD5392300713D36 /* MyBasket.swift */,
+				172AC2BA2AD53A0100713D36 /* MyBasketViewModel.swift */,
+			);
+			path = Basket;
+			sourceTree = "<group>";
+		};
+		81D1A5082AE33C4F005F008D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				172AC2DD2ADD6E5600713D36 /* CartTableViewCell.swift */,
+				172AC2D62AD6BF5000713D36 /* CollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
