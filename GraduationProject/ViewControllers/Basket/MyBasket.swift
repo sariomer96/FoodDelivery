@@ -108,8 +108,9 @@ extension MyBasket : UITableViewDelegate, UITableViewDataSource {
         
         let id = Int(basket.sepet_yemek_id!)!
         
-       
-    
+         cell.contentView.layer.borderWidth = 1.0
+         cell.contentView.layer.borderColor = UIColor.lightGray.cgColor
+        
         cell.deleteClick.tag = id
         
         cell.deleteClick.addTarget(self, action: #selector(deleteCell(id: )), for: .touchUpInside)
@@ -122,7 +123,7 @@ extension MyBasket : UITableViewDelegate, UITableViewDataSource {
              cell.priceLabel.text = "\(Constants.shared.tl) \(priceAmount)"
              cell.countLabel.text = basket.yemek_siparis_adet
              cell.totalPriceLabel.text = "\(Constants.shared.tl) \(basket.yemek_fiyat!)"
-         
+          
              
         cell.foodImageView.sd_setImage(with: URL(string: "http://kasimadalan.pe.hu/yemekler/resimler/\(basket.yemek_resim_adi!)"), placeholderImage: UIImage(named: basket.yemek_resim_adi!))
              
@@ -131,6 +132,7 @@ extension MyBasket : UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
+   
     
     @objc func deleteCell(id : UIButton){
         
