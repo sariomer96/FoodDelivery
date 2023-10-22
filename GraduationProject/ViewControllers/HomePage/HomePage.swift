@@ -59,7 +59,7 @@ final class HomePage: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toDetail" {
+        if segue.identifier == Constants.shared.foodDetailId {
             if let food = sender as? Foods {
                 let targetVC = segue.destination as! FoodDetail
                 targetVC.food = food
@@ -76,7 +76,7 @@ extension HomePage : UICollectionViewDelegate, UICollectionViewDataSource, UICol
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let food = foodList[indexPath.row]
-        performSegue(withIdentifier: "toDetail", sender: food)
+        performSegue(withIdentifier: Constants.shared.foodDetailId, sender: food)
         collectionView.deselectItem(at: indexPath, animated: true)
     }
     

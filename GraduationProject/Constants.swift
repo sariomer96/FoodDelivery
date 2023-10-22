@@ -12,6 +12,7 @@ class Constants {
     static let shared = Constants()
     let tl = "₺"
     let userName = "s_omer_sari"
+    let foodDetailId = "toDetail"
     private init () { }
     
     

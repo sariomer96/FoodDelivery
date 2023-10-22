@@ -16,9 +16,15 @@ class MyBasket: UIViewController {
     var basketList = [BasketFoods]()
     var viewModel = MyBasketViewModel()
    
-   
- 
-   
+    override func viewDidLoad() {
+        
+       
+        tableViewCart.dataSource = self
+        tableViewCart.delegate = self
+            super.viewDidLoad()
+  
+    }
+    
     func getTotalPrice(basketList:[BasketFoods]) -> Int {
         
         viewModel.totalPrice = 0
@@ -30,14 +36,7 @@ class MyBasket: UIViewController {
         return viewModel.totalPrice
     }
     
-    override func viewDidLoad() {
-        
-       
-        tableViewCart.dataSource = self
-        tableViewCart.delegate = self
-            super.viewDidLoad()
-  
-    }
+ 
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -147,7 +146,6 @@ extension MyBasket : UITableViewDelegate, UITableViewDataSource {
            
     func getBasket() {
         viewModel.fRepo.getCartFood(kullanici_adi: Constants.shared.userName) { result in
-              
         }
    
     }

@@ -100,7 +100,7 @@ class FoodDetail: UIViewController {
     @IBAction func addToCart(_ sender: Any) {
  
         
-        viewModel.fRepo.getCartFood(kullanici_adi: "s_omer_sari") { result  in
+        viewModel.fRepo.getCartFood(kullanici_adi: Constants.shared.userName) { result  in
            
             self.addChart() { res in
                 
