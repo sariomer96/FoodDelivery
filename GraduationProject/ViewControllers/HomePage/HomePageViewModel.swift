@@ -22,4 +22,8 @@ final class HomePageViewModel {
     }
     
      
+    func search(word: String) {
+       fRepo.search(word: word)
+        
+    }
 }

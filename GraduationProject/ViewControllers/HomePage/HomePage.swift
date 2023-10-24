@@ -31,12 +31,17 @@ final class HomePage: UIViewController {
     private func initViews() {
         foodCollectionView.delegate = self
         foodCollectionView.dataSource = self
+        searchBar.delegate = self
+        
     }
-
+    
+  
     private func configureCallBacks() {
 
         _ = viewModel.foodList.subscribe(onNext: { list in
+            self.refreshList()
             self.foodList = list
+   
             for food in self.foodList {
                 guard let image = food.yemek_resim_adi,
                       let name = food.yemek_adi,
@@ -71,7 +76,7 @@ final class HomePage: UIViewController {
 extension HomePage : UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        return imageList.count
+        return foodList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -105,4 +110,16 @@ extension HomePage : UICollectionViewDelegate, UICollectionViewDataSource, UICol
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
     }
+}
+extension HomePage : UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        
+       viewModel.search(word: searchText)
+        
+        
+        print("araa \(foodList.count)")
+        self.foodCollectionView.reloadData()
+    }
+ 
 }

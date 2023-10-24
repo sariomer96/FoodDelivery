@@ -33,6 +33,54 @@ class FoodDaoRepository {
         }
     }
    
+    func search(word : String) {
+        
+        let lowerWord = word.lowercased()
+        
+        
+              var searchedList = [Foods]()
+        searchedList.removeAll()
+        AF.request("http://kasimadalan.pe.hu/yemekler/tumYemekleriGetir.php",method: .get).response { response in
+            if let data = response.data{
+                do{
+                    let cevap = try JSONDecoder().decode(FoodResponse.self, from: data)
+                    if let liste = cevap.yemekler {
+                        
+                        for i in liste {
+                            let a = i.yemek_adi!
+                            
+                            let lowerFood = a.lowercased()
+                            if (lowerFood.contains(lowerWord)){
+                                searchedList.append(i)
+                            }
+                        }
+                        
+                        if searchedList.isEmpty {
+                            self.foodList.onNext(liste)
+                            print("searchempty")
+                        }else{
+                             
+                            for i in searchedList {
+                                print(i.yemek_adi!)
+                            }
+                            self.foodList.onNext(searchedList)
+                        }
+                      
+                    }
+                }catch{
+                    print(error.localizedDescription)
+                }
+            }
+            
+        }
+
+//
+//
+//        self.foodList.onNext(list)
+       // return list
+            
+            
+    }
     func addToCartFood(yemek_adi:String,yemek_resim_adi:String,yemek_fiyat:Int,yemek_siparis_adet:Int,
                    kullanici_adi:String){
         
