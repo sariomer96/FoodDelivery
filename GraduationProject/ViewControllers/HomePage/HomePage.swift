@@ -11,6 +11,7 @@ import SDWebImage
 final class HomePage: UIViewController {
 
     @IBOutlet weak var searchBar: UISearchBar!
+ 
     @IBOutlet  private weak var foodCollectionView: UICollectionView!
     private var foodList = [Foods]()
     private var imageList = [String]()
@@ -89,6 +90,12 @@ extension HomePage : UICollectionViewDelegate, UICollectionViewDataSource, UICol
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
         
+        
+        // Configure the cell
+        cell.layer.cornerRadius = 10
+        cell.layer.masksToBounds = true
+        cell.layer.borderWidth = 2.0
+      
 
         cell.labelUrunAdi.text = foodNameList[indexPath.row]
         cell.labelFiyat.text = "\(Constants.shared.tl) \(foodPriceList[indexPath.row])"
@@ -100,15 +107,22 @@ extension HomePage : UICollectionViewDelegate, UICollectionViewDataSource, UICol
 
   
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+       
+        
         let screenWidth = UIScreen.main.bounds.width
         // 32 constraints + inter space
-        let width: CGFloat = (screenWidth - 16)/2
-        let height: CGFloat = 298
+        let width: CGFloat = (screenWidth - 16)/2.8
+        
+        
+        let height: CGFloat = 211
+        
+        
         return .init(width: width, height: height)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
+        return UIEdgeInsets(top: 8, left: 48, bottom: 8, right: 48)
     }
 }
 extension HomePage : UISearchBarDelegate {
