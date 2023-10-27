@@ -124,7 +124,7 @@ class FoodDaoRepository {
                 }
     }
     
-    func deleteFoodOnBasket(sepet_yemek_id : Int,kullanici_adi:String,completion: @escaping (Result<Int, Constants.Errors>) -> Void){
+    func deleteFoodOnBasket(index:Int,basketList:[BasketFoods]?,sepet_yemek_id : Int,kullanici_adi:String,completion: @escaping (Result<Int, Constants.Errors>) -> Void){
         let params:Parameters = ["sepet_yemek_id":sepet_yemek_id,"kullanici_adi":kullanici_adi]
                 AF.request("http://kasimadalan.pe.hu/yemekler/sepettenYemekSil.php",method: .post,parameters: params).response {
                     response in
@@ -135,7 +135,14 @@ class FoodDaoRepository {
                                //success
                             
                             if let resp = cevap.success {
-                          
+                                    
+                               
+                                
+                                if var basket = basketList {
+                                    basket.remove(at: index)
+                                    self.basketList.onNext(basket)
+                                }
+                                print("deleted")
                                 completion(.success(1))
                             }
                            

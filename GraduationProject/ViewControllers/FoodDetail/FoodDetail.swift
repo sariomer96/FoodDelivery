@@ -81,7 +81,7 @@ class FoodDetail: UIViewController {
 
                     
                     cont = true
-                    self.viewModel.fRepo.deleteFoodOnBasket(sepet_yemek_id: Int(i.sepet_yemek_id!)! , kullanici_adi: Constants.shared.userName){ result in
+                    self.viewModel.fRepo.deleteFoodOnBasket(index:index,basketList:self.basketList,sepet_yemek_id: Int(i.sepet_yemek_id!)! , kullanici_adi: Constants.shared.userName){ result in
                         self.viewModel.addToCart(yemek_adi: food.yemek_adi!, yemek_resim_adi: food.yemek_resim_adi!, yemek_fiyat: self.foodTotalPrice + Int(i.yemek_fiyat!)!, yemek_siparis_adet: Int(i.yemek_siparis_adet!)! + self.foodCount, kullanici_adi: Constants.shared.userName)
                         
                         completion(.success(1))

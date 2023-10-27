@@ -112,7 +112,9 @@
                             <constraint firstItem="b0T-TQ-GcG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="yhs-iu-B1Z"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="oAX-9H-YRs"/>
+                    <navigationItem key="navigationItem" leftItemsSupplementBackButton="YES" id="oAX-9H-YRs">
+                        <barButtonItem key="backBarButtonItem" title=" " id="eI7-vX-Cxd"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="foodCollectionView" destination="b0T-TQ-GcG" id="9sr-Rw-aGf"/>
                         <outlet property="searchBar" destination="tza-Tp-iO9" id="Ifk-FQ-z3b"/>
@@ -202,11 +204,11 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWl-CB-OB3">
-                                <rect key="frame" x="181" y="722" width="203" height="43"/>
+                                <rect key="frame" x="187" y="723" width="197" height="42"/>
                                 <color key="backgroundColor" red="0.043137254901960784" green="0.80784313725490198" blue="0.51372549019607838" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" image="basket" catalog="system" title="  Sepete Ekle">
-                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="25"/>
+                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
                                     <color key="baseBackgroundColor" red="0.043137254899999998" green="0.80784313730000001" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <userDefinedRuntimeAttributes>
@@ -238,11 +240,13 @@
                             <constraint firstItem="MCf-sY-uyw" firstAttribute="trailing" secondItem="BMz-DZ-fu6" secondAttribute="trailing" constant="98" id="Fvu-QR-FPk"/>
                             <constraint firstItem="OK0-Dj-BA5" firstAttribute="centerX" secondItem="XOH-Ox-kuG" secondAttribute="centerX" id="LYE-Ic-2bi"/>
                             <constraint firstItem="HYR-ni-jCc" firstAttribute="top" secondItem="MCf-sY-uyw" secondAttribute="top" constant="8" id="Qth-GE-i0C"/>
+                            <constraint firstItem="e8Z-vO-E3Y" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="HYR-ni-jCc" secondAttribute="trailing" constant="8" symbolic="YES" id="TZY-x9-DAN"/>
                             <constraint firstItem="aU4-5e-YBh" firstAttribute="top" secondItem="kA0-Oj-Dej" secondAttribute="bottom" constant="0.5" id="UEF-fZ-lOU"/>
                             <constraint firstItem="BMz-DZ-fu6" firstAttribute="leading" secondItem="MCf-sY-uyw" secondAttribute="leading" constant="98" id="VBg-Fd-iBu"/>
                             <constraint firstItem="GNB-ok-bju" firstAttribute="centerX" secondItem="BMz-DZ-fu6" secondAttribute="centerX" constant="8" id="Xm4-Yc-4C9"/>
                             <constraint firstItem="aU4-5e-YBh" firstAttribute="centerX" secondItem="XOH-Ox-kuG" secondAttribute="centerX" id="ZEo-lt-3Cl"/>
                             <constraint firstItem="TvJ-Jj-i2U" firstAttribute="top" secondItem="HYR-ni-jCc" secondAttribute="bottom" constant="7" id="ZNI-lc-CR9"/>
+                            <constraint firstItem="LWl-CB-OB3" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="600-zU-ykw" secondAttribute="trailing" constant="8" symbolic="YES" id="fOS-eE-sMq"/>
                             <constraint firstItem="kA0-Oj-Dej" firstAttribute="centerX" secondItem="XOH-Ox-kuG" secondAttribute="centerX" id="jVn-2i-nAQ"/>
                             <constraint firstItem="GNB-ok-bju" firstAttribute="top" secondItem="BMz-DZ-fu6" secondAttribute="bottom" constant="25" id="nAC-Jd-tX6"/>
                             <constraint firstItem="e8Z-vO-E3Y" firstAttribute="top" secondItem="MCf-sY-uyw" secondAttribute="top" constant="8" id="nc7-ut-Txd"/>
@@ -252,7 +256,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Food Detail" id="lMv-in-gia"/>
-                    <navigationItem key="navigationItem" id="Knb-Iw-ATe"/>
+                    <navigationItem key="navigationItem" customizationIdentifier="" id="Knb-Iw-ATe">
+                        <barButtonItem key="backBarButtonItem" title=" " id="Q6L-5F-oXs"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="foodCountLabel" destination="aU4-5e-YBh" id="9ut-M4-v8J"/>
                         <outlet property="foodName" destination="OK0-Dj-BA5" id="NfL-kR-ZLq"/>
@@ -319,11 +325,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6A-LR-Ezk">
-                                                    <rect key="frame" x="350" y="0.0" width="48" height="34"/>
-                                                    <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" image="trash.fill" catalog="system"/>
-                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbc-aF-RrI">
                                                     <rect key="frame" x="190" y="33.5" width="11.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -335,8 +336,6 @@
                                                 <constraint firstItem="Lop-1k-H73" firstAttribute="leading" secondItem="Wph-70-75Q" secondAttribute="leading" constant="20" symbolic="YES" id="AqR-Ck-yrK"/>
                                                 <constraint firstItem="Lop-1k-H73" firstAttribute="top" secondItem="Wph-70-75Q" secondAttribute="top" id="ESz-7F-xcB"/>
                                                 <constraint firstItem="Cgz-Zc-l1M" firstAttribute="leading" secondItem="Wph-70-75Q" secondAttribute="leading" constant="190" id="Eca-aH-DN1"/>
-                                                <constraint firstItem="u6A-LR-Ezk" firstAttribute="top" secondItem="Wph-70-75Q" secondAttribute="top" id="EuP-iN-oe4"/>
-                                                <constraint firstAttribute="trailing" secondItem="u6A-LR-Ezk" secondAttribute="trailing" id="FDp-02-2Hp"/>
                                                 <constraint firstItem="Cgz-Zc-l1M" firstAttribute="top" secondItem="Hna-Zh-AHQ" secondAttribute="bottom" constant="32.5" id="Jwp-TU-O3g"/>
                                                 <constraint firstItem="wbc-aF-RrI" firstAttribute="leading" secondItem="Wph-70-75Q" secondAttribute="leading" constant="190" id="Ock-ZA-kl7"/>
                                                 <constraint firstAttribute="trailing" secondItem="Lop-1k-H73" secondAttribute="trailing" constant="263" id="SIv-01-Hep"/>
@@ -352,7 +351,6 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="countLabel" destination="Cgz-Zc-l1M" id="tyA-qU-EQf"/>
-                                            <outlet property="deleteClick" destination="u6A-LR-Ezk" id="CKh-o4-nFi"/>
                                             <outlet property="foodImageView" destination="Lop-1k-H73" id="TaH-8q-z7S"/>
                                             <outlet property="foodNameLabel" destination="Hna-Zh-AHQ" id="1L7-Zu-dG1"/>
                                             <outlet property="priceLabel" destination="wbc-aF-RrI" id="Cw6-F9-Ahr"/>
@@ -362,19 +360,21 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6j5-3P-7za">
-                                <rect key="frame" x="36" y="729" width="342" height="44"/>
+                                <rect key="frame" x="36" y="746" width="342" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="8l0-C9-2VU"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="SEPETI ONAYLA" buttonSize="large">
-                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
-                                    <color key="baseForegroundColor" red="0.01176470588" green="0.058823529409999999" blue="0.14901960780000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="baseBackgroundColor" systemColor="systemYellowColor"/>
+                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="24"/>
+                                    <color key="baseBackgroundColor" red="0.043137254899999998" green="0.80784313730000001" blue="0.51372549020000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="acceptBasket:" destination="BDm-JL-2j7" eventType="touchUpInside" id="YCc-Ga-rJA"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="250" translatesAutoresizingMaskIntoConstraints="NO" id="5Gh-6A-Gic">
-                                <rect key="frame" x="43" y="674.5" width="328" height="23"/>
+                                <rect key="frame" x="43" y="680" width="328" height="23"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toplam:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dgd-NA-hTD">
                                         <rect key="frame" x="0.0" y="0.0" width="65" height="23"/>
@@ -396,11 +396,11 @@
                         <constraints>
                             <constraint firstItem="LwM-Wt-YBg" firstAttribute="top" secondItem="2Az-FH-t0M" secondAttribute="top" constant="24" id="8R5-lj-arZ"/>
                             <constraint firstItem="6j5-3P-7za" firstAttribute="leading" secondItem="2Az-FH-t0M" secondAttribute="leading" constant="36" id="Iib-Lr-Afd"/>
+                            <constraint firstItem="2Az-FH-t0M" firstAttribute="bottom" secondItem="5Gh-6A-Gic" secondAttribute="bottom" constant="110" id="KBo-qw-OSm"/>
                             <constraint firstItem="LwM-Wt-YBg" firstAttribute="leading" secondItem="2Az-FH-t0M" secondAttribute="leading" constant="8" id="M7Q-1T-Wq0"/>
                             <constraint firstItem="5Gh-6A-Gic" firstAttribute="centerX" secondItem="t70-hA-9Lv" secondAttribute="centerX" id="XFT-Jw-OfQ"/>
                             <constraint firstItem="2Az-FH-t0M" firstAttribute="bottom" secondItem="LwM-Wt-YBg" secondAttribute="bottom" constant="144" id="XYD-7b-owI"/>
-                            <constraint firstItem="2Az-FH-t0M" firstAttribute="bottom" secondItem="6j5-3P-7za" secondAttribute="bottom" constant="40" id="bI4-Pu-Hhm"/>
-                            <constraint firstItem="6j5-3P-7za" firstAttribute="top" secondItem="5Gh-6A-Gic" secondAttribute="bottom" constant="31.5" id="jys-kU-mlW"/>
+                            <constraint firstItem="2Az-FH-t0M" firstAttribute="bottom" secondItem="6j5-3P-7za" secondAttribute="bottom" constant="24" id="bI4-Pu-Hhm"/>
                             <constraint firstItem="2Az-FH-t0M" firstAttribute="trailing" secondItem="6j5-3P-7za" secondAttribute="trailing" constant="36" id="q30-s6-etK"/>
                             <constraint firstItem="2Az-FH-t0M" firstAttribute="trailing" secondItem="LwM-Wt-YBg" secondAttribute="trailing" constant="8" id="wNo-Nx-dlf"/>
                         </constraints>
@@ -468,7 +468,6 @@
         <image name="star" catalog="system" width="128" height="116"/>
         <image name="star.fill" catalog="system" width="128" height="116"/>
         <image name="suit.heart.fill" catalog="system" width="128" height="107"/>
-        <image name="trash.fill" catalog="system" width="119" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

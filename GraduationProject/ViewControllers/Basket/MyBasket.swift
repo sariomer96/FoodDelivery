@@ -66,19 +66,19 @@ class MyBasket: UIViewController {
     @IBAction func acceptBasket(_ sender: Any) {
         DispatchQueue.main.async {
             
-            for (index, i) in self.basketList.enumerated() {
-                print("\(index)  \(self.basketList.endIndex - 1)")
+            for (ind, i) in self.basketList.enumerated() {
+                print("\(ind)  \(self.basketList.endIndex - 1)")
                 
                 
-                if index == (self.basketList.endIndex - 1) {
+                if ind == (self.basketList.endIndex - 1) {
                   
-                    self.viewModel.fRepo.deleteFoodOnBasket(sepet_yemek_id: Int(i.sepet_yemek_id!)!, kullanici_adi: i.kullanici_adi!) { result in
+                    self.viewModel.fRepo.deleteFoodOnBasket(index:ind,basketList: self.basketList ,sepet_yemek_id: Int(i.sepet_yemek_id!)!, kullanici_adi: i.kullanici_adi!) { result in
                     
                         self.getBasket()
                     }
                 }else{
                   
-                    self.viewModel.fRepo.deleteFoodOnBasket(sepet_yemek_id: Int(i.sepet_yemek_id!)!, kullanici_adi: i.kullanici_adi!) { result in
+                    self.viewModel.fRepo.deleteFoodOnBasket(index:ind,basketList: self.basketList ,sepet_yemek_id: Int(i.sepet_yemek_id!)!, kullanici_adi: i.kullanici_adi!) { result in
                         
                     }
                 }
@@ -98,7 +98,29 @@ extension MyBasket : UITableViewDelegate, UITableViewDataSource {
         basketList.count
     }
     
-    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let silAction = UIContextualAction(style: .destructive, title: "Sil"){ contextualAction,view,bool in
+            let basketElement = self.basketList[indexPath.row]
+            
+            let alert = UIAlertController(title: "Silme İşlemi", message: "\(basketElement.yemek_adi!) silinsi mi?", preferredStyle: .alert)
+            
+            let iptalAction = UIAlertAction(title: "İptal", style: .cancel)
+            alert.addAction(iptalAction)
+            
+            let evetAction = UIAlertAction(title: "Evet", style: .destructive){ action in
+                self.viewModel.fRepo.deleteFoodOnBasket(index: indexPath.row,basketList: self.basketList,sepet_yemek_id: Int(basketElement.sepet_yemek_id!)!, kullanici_adi: Constants.shared.userName) { result in
+                    
+//                   
+//                    tableView.reloadData()
+                }
+            }
+            alert.addAction(evetAction)
+            
+            self.present(alert, animated: true)
+        }
+        
+        return UISwipeActionsConfiguration(actions: [silAction])
+    }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell") as! CartTableViewCell
@@ -108,12 +130,15 @@ extension MyBasket : UITableViewDelegate, UITableViewDataSource {
         
         let id = Int(basket.sepet_yemek_id!)!
         
-         cell.contentView.layer.borderWidth = 1.0
-         cell.contentView.layer.borderColor = UIColor.lightGray.cgColor
+      
+      //  cell.contentView.layer.borderColor = UIColor.green.cgColor
         
-        cell.deleteClick.tag = id
-        
-        cell.deleteClick.addTarget(self, action: #selector(deleteCell(id: )), for: .touchUpInside)
+        // Configure the cell
+        cell.layer.cornerRadius = 10
+        cell.layer.masksToBounds = true
+        cell.layer.borderWidth = 1.0
+        cell.layer.borderColor = UIColor.darkGray.cgColor
+       
         
              let price = Int( basket.yemek_fiyat!)
              let amount = Int(basket.yemek_siparis_adet!)
@@ -134,15 +159,7 @@ extension MyBasket : UITableViewDelegate, UITableViewDataSource {
     }
    
     
-    @objc func deleteCell(id : UIButton){
-        
-  
-       
-        self.viewModel.fRepo.deleteFoodOnBasket(sepet_yemek_id: id.tag, kullanici_adi: Constants.shared.userName) { res in
-                 
-                self.getBasket()
-            }
-        }
+   
         
         
            
