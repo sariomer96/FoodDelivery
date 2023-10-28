@@ -57,7 +57,7 @@ class FoodDaoRepository {
                         
                         if searchedList.isEmpty {
                             self.foodList.onNext(liste)
-                            print("searchempty")
+                           
                         }else{
                              
                             for i in searchedList {
@@ -142,7 +142,7 @@ class FoodDaoRepository {
                                     basket.remove(at: index)
                                     self.basketList.onNext(basket)
                                 }
-                                print("deleted")
+                                
                                 completion(.success(1))
                             }
                            

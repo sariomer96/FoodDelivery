@@ -102,7 +102,7 @@ extension MyBasket : UITableViewDelegate, UITableViewDataSource {
         let silAction = UIContextualAction(style: .destructive, title: "Sil"){ contextualAction,view,bool in
             let basketElement = self.basketList[indexPath.row]
             
-            let alert = UIAlertController(title: "Silme İşlemi", message: "\(basketElement.yemek_adi!) silinsi mi?", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Silme İşlemi", message: "\(basketElement.yemek_adi!) Silinsin mi?", preferredStyle: .alert)
             
             let iptalAction = UIAlertAction(title: "İptal", style: .cancel)
             alert.addAction(iptalAction)

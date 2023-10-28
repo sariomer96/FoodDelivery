@@ -132,7 +132,7 @@ extension HomePage : UISearchBarDelegate {
        viewModel.search(word: searchText)
         
         
-        print("araa \(foodList.count)")
+        
         self.foodCollectionView.reloadData()
     }
  
